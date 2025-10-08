@@ -5,12 +5,18 @@ export async function POST(request: NextRequest) {
   try {
     const { name, email, company, website, message } = await request.json();
 
-    // Create transporter
-    const transporter = nodemailer.createTransporter({
-      service: 'gmail', // You can change this to your email service
+    // Debug: Check if credentials are loaded
+    console.log('EMAIL_USER:', process.env.EMAIL_USER ? 'Set' : 'Missing');
+    console.log('EMAIL_PASS:', process.env.EMAIL_PASS ? 'Set' : 'Missing');
+
+    // Create transporter for PrivateEmail
+    const transporter = nodemailer.createTransport({
+      host: process.env.EMAIL_HOST || 'mail.privateemail.com',
+      port: parseInt(process.env.EMAIL_PORT || '465'),
+      secure: true, // true for 465, false for other ports
       auth: {
         user: process.env.EMAIL_USER, // hello@teil.studio
-        pass: process.env.EMAIL_PASS, // App password
+        pass: process.env.EMAIL_PASS, // Email password
       },
     });
 
