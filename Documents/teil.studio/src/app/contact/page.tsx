@@ -28,7 +28,32 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Custom validation with English messages
+    if (!formData.name.trim()) {
+      setMessage('Please enter your name.');
+      return;
+    }
+    
+    if (!formData.email.trim()) {
+      setMessage('Please enter your email.');
+      return;
+    }
+    
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setMessage('Please enter a valid email address.');
+      return;
+    }
+    
+    if (!formData.message.trim()) {
+      setMessage('Please tell us how we can help.');
+      return;
+    }
+    
     setIsSubmitting(true);
+    setMessage('');
     
     try {
       const response = await fetch('/api/contact', {
@@ -91,7 +116,7 @@ export default function Contact() {
         {/* Contact Form - centered */}
         <div className="max-w-[560px] mx-auto px-6">
           <p className="font-['Maison_Neue_Mono',_sans-serif] text-[14px] text-[#1a2e66] mb-4">
-            Learn more about teile.studio
+            Learn more about teil.studio
           </p>
           
           <h1 className="font-['Artifex_Hand_CF',_sans-serif] text-[30px] text-[#1a2e66] text-left mb-8">
@@ -116,7 +141,6 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleInputChange}
                   placeholder="John Doe"
-                  required
                   className="w-full bg-[#f7f2e8] h-[41px] rounded-[8px] px-4 font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-[#1a2e66]"
                 />
               </div>
@@ -130,7 +154,6 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="john.doe@abc.inc"
-                  required
                   className="w-full bg-[#f7f2e8] h-[41px] rounded-[8px] px-4 font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-[#1a2e66]"
                 />
               </div>
@@ -157,7 +180,7 @@ export default function Contact() {
                 Company website
               </label>
               <input 
-                type="url" 
+                type="text" 
                 name="website"
                 value={formData.website}
                 onChange={handleInputChange}
@@ -176,7 +199,6 @@ export default function Contact() {
                 value={formData.message}
                 onChange={handleInputChange}
                 placeholder="Tell us more"
-                required
                 rows={5}
                 className="w-full bg-[#f7f2e8] min-h-[120px] rounded-[8px] px-4 py-3 font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-[#1a2e66] resize-y"
               />
