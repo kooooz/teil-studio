@@ -1,29 +1,37 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { kv } from '@vercel/kv';
+import nodemailer from 'nodemailer';
 
-async function addToNewsletterKV(email: string): Promise<void> {
+async function sendNewsletterSignup(email: string): Promise<void> {
   try {
-    // Check if email already exists
-    const existingEmail = await kv.get(`newsletter:${email}`);
-    if (existingEmail) {
-      throw new Error('Email already subscribed');
-    }
-    
-    // Add new subscriber with timestamp
-    const subscriberData = {
-      email,
-      timestamp: new Date().toISOString(),
-      id: Date.now().toString()
+    // Create transporter for PrivateEmail
+    const transporter = nodemailer.createTransporter({
+      host: process.env.EMAIL_HOST || 'mail.privateemail.com',
+      port: parseInt(process.env.EMAIL_PORT || '465'),
+      secure: true,
+      auth: {
+        user: process.env.EMAIL_USER, // hello@teil.studio
+        pass: process.env.EMAIL_PASS, // Email password
+      },
+    });
+
+    // Email content
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: 'hello@teil.studio',
+      subject: `New Newsletter Signup - ${email}`,
+      html: `
+        <h2>New Newsletter Signup</h2>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Date:</strong> ${new Date().toISOString()}</p>
+        <p><strong>Source:</strong> teil.studio website</p>
+      `,
     };
-    
-    // Store in KV with email as key
-    await kv.set(`newsletter:${email}`, subscriberData);
-    
-    // Add to subscribers list for easy retrieval
-    await kv.sadd('newsletter:subscribers', email);
+
+    // Send email
+    await transporter.sendMail(mailOptions);
     
   } catch (error) {
-    console.error('Newsletter KV error:', error);
+    console.error('Newsletter email error:', error);
     throw error;
   }
 }
@@ -43,8 +51,8 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Invalid email format' }, { status: 400 });
     }
 
-    // Add to Vercel KV database
-    await addToNewsletterKV(email);
+    // Send newsletter signup notification email
+    await sendNewsletterSignup(email);
 
     return NextResponse.json({ message: 'Email added to newsletter list' }, { status: 200 });
   } catch (error) {
