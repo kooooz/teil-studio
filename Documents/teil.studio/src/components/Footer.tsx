@@ -2,33 +2,84 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 type FooterVariant = 'absolute' | 'flow';
 
+declare global {
+  interface Window {
+    grecaptcha: any;
+  }
+}
+
 export default function Footer({ variant = 'absolute' }: { variant?: FooterVariant }) {
   const [email, setEmail] = useState("");
+  const [honeypot, setHoneypot] = useState(""); // Bot trap
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState("");
+  const [recaptchaLoaded, setRecaptchaLoaded] = useState(false);
+
+  const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+
+  // Load reCAPTCHA v3 script
+  useEffect(() => {
+    if (!siteKey) {
+      console.warn("reCAPTCHA site key not configured");
+      return;
+    }
+
+    const script = document.createElement('script');
+    script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`;
+    script.async = true;
+    script.onload = () => setRecaptchaLoaded(true);
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, [siteKey]);
 
   const handleNewsletterSignup = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Honeypot check - if filled, it's likely a bot
+    if (honeypot) {
+      setMessage("Error subscribing. Please try again.");
+      return;
+    }
+
     setIsSubmitting(true);
     
     try {
+      let recaptchaToken = '';
+      
+      // Get reCAPTCHA token if available
+      if (siteKey && recaptchaLoaded && window.grecaptcha) {
+        try {
+          recaptchaToken = await window.grecaptcha.execute(siteKey, { action: 'newsletter_signup' });
+        } catch (error) {
+          console.error("reCAPTCHA error:", error);
+        }
+      }
+
       const response = await fetch('/api/newsletter', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ 
+          email,
+          recaptchaToken 
+        }),
       });
+
+      const data = await response.json();
 
       if (response.ok) {
         setMessage("Thank you for subscribing!");
         setEmail("");
       } else {
-        setMessage("Error subscribing. Please try again.");
+        setMessage(data.error || "Error subscribing. Please try again.");
       }
     } catch (error) {
       setMessage("Error subscribing. Please try again.");
@@ -46,8 +97,8 @@ export default function Footer({ variant = 'absolute' }: { variant?: FooterVaria
           <div className="grid md:grid-cols-3 grid-cols-1 items-start gap-x-10 gap-y-6 px-[110px]">
           {/* Left Section - Legal */}
           <div className="space-y-2 mt-2" data-node-id="31:5">
-            <a href="/legal-notice" className="block font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-white hover:opacity-80">Legal Notice</a>
-            <a href="/data-protection" className="block font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-white hover:opacity-80" data-node-id="31:8">Data Protection</a>
+            <Link href="/legal-notice" className="block font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-white hover:opacity-80">Legal Notice</Link>
+            <Link href="/data-protection" className="block font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-white hover:opacity-80" data-node-id="31:8">Data Protection</Link>
           </div>
 
           {/* Center Section - More teil.studio */}
@@ -92,6 +143,17 @@ export default function Footer({ variant = 'absolute' }: { variant?: FooterVaria
           <div className="text-left flex flex-col justify-end" data-name="Email Sign Up" data-node-id="91:62">
             <p className="font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-white whitespace-pre mb-4" data-node-id="31:14">Get our emails. Updates.</p>
             <form onSubmit={handleNewsletterSignup} className="flex">
+              {/* Honeypot field - hidden from humans, visible to bots */}
+              <input
+                type="text"
+                name="website"
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+                autoComplete="off"
+                tabIndex={-1}
+                style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px' }}
+                aria-hidden="true"
+              />
               <div className="relative">
                 <input
                   type="email"
@@ -148,9 +210,9 @@ export default function Footer({ variant = 'absolute' }: { variant?: FooterVaria
           {/* Left - Logo and Copyright */}
           <div className="flex items-end space-x-8">
             <div className="h-[28px] w-[75px] transform md:-translate-y-[6px]" data-name="teil.studio logo footer" data-node-id="69:189">
-              <a href="/" className="block w-full h-full hover:opacity-70 transition-opacity">
+              <Link href="/" className="block w-full h-full hover:opacity-70 transition-opacity">
                 <Image alt="teil.studio logo" src="/logos/Element 7 3.svg" width={75} height={28} className="block max-w-none size-full" />
-              </a>
+              </Link>
             </div>
             <span className="h-[28px] flex items-end font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-white whitespace-pre" data-node-id="69:199">©2025</span>
           </div>
@@ -172,6 +234,17 @@ export default function Footer({ variant = 'absolute' }: { variant?: FooterVaria
           <div className="text-left flex flex-col justify-end" data-name="Email Sign Up" data-node-id="91:62">
             <p className="font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-white whitespace-pre mb-4" data-node-id="31:14">Get our emails. Updates.</p>
             <form onSubmit={handleNewsletterSignup} className="flex">
+              {/* Honeypot field - hidden from humans, visible to bots */}
+              <input
+                type="text"
+                name="website"
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+                autoComplete="off"
+                tabIndex={-1}
+                style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px' }}
+                aria-hidden="true"
+              />
               <div className="relative">
                 <input
                   type="email"
