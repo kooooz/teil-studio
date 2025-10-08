@@ -1,37 +1,29 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { promises as fs } from 'fs';
-import path from 'path';
+import { kv } from '@vercel/kv';
 
-
-async function addToNewsletterFile(email: string): Promise<void> {
-  const dataPath = path.join(process.cwd(), 'data', 'newsletter.json');
-  
+async function addToNewsletterKV(email: string): Promise<void> {
   try {
-    // Read existing data
-    const fileContent = await fs.readFile(dataPath, 'utf8');
-    const data = JSON.parse(fileContent);
-    
     // Check if email already exists
-    const emailExists = data.subscribers.some((sub: any) => sub.email === email);
-    if (emailExists) {
+    const existingEmail = await kv.get(`newsletter:${email}`);
+    if (existingEmail) {
       throw new Error('Email already subscribed');
     }
     
-    // Add new subscriber
-    const newSubscriber = {
+    // Add new subscriber with timestamp
+    const subscriberData = {
       email,
       timestamp: new Date().toISOString(),
       id: Date.now().toString()
     };
     
-    data.subscribers.push(newSubscriber);
-    data.lastUpdated = new Date().toISOString();
+    // Store in KV with email as key
+    await kv.set(`newsletter:${email}`, subscriberData);
     
-    // Write back to file
-    await fs.writeFile(dataPath, JSON.stringify(data, null, 2), 'utf8');
+    // Add to subscribers list for easy retrieval
+    await kv.sadd('newsletter:subscribers', email);
     
   } catch (error) {
-    console.error('Newsletter file error:', error);
+    console.error('Newsletter KV error:', error);
     throw error;
   }
 }
@@ -51,8 +43,8 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Invalid email format' }, { status: 400 });
     }
 
-    // Add to local JSON file
-    await addToNewsletterFile(email);
+    // Add to Vercel KV database
+    await addToNewsletterKV(email);
 
     return NextResponse.json({ message: 'Email added to newsletter list' }, { status: 200 });
   } catch (error) {
