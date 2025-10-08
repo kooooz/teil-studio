@@ -6,38 +6,12 @@ import { useState, useEffect } from "react";
 
 type FooterVariant = 'absolute' | 'flow';
 
-declare global {
-  interface Window {
-    grecaptcha: any;
-  }
-}
 
 export default function Footer({ variant = 'absolute' }: { variant?: FooterVariant }) {
   const [email, setEmail] = useState("");
   const [honeypot, setHoneypot] = useState(""); // Bot trap
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState("");
-  const [recaptchaLoaded, setRecaptchaLoaded] = useState(false);
-
-  const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
-
-  // Load reCAPTCHA v3 script
-  useEffect(() => {
-    if (!siteKey) {
-      console.warn("reCAPTCHA site key not configured");
-      return;
-    }
-
-    const script = document.createElement('script');
-    script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`;
-    script.async = true;
-    script.onload = () => setRecaptchaLoaded(true);
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, [siteKey]);
 
   const handleNewsletterSignup = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -51,25 +25,13 @@ export default function Footer({ variant = 'absolute' }: { variant?: FooterVaria
     setIsSubmitting(true);
     
     try {
-      let recaptchaToken = '';
-      
-      // Get reCAPTCHA token if available
-      if (siteKey && recaptchaLoaded && window.grecaptcha) {
-        try {
-          recaptchaToken = await window.grecaptcha.execute(siteKey, { action: 'newsletter_signup' });
-        } catch (error) {
-          console.error("reCAPTCHA error:", error);
-        }
-      }
-
       const response = await fetch('/api/newsletter', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ 
-          email,
-          recaptchaToken 
+          email
         }),
       });
 

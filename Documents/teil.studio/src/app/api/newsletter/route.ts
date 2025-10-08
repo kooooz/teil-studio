@@ -2,31 +2,6 @@ import { NextRequest, NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import path from 'path';
 
-async function verifyRecaptcha(token: string): Promise<boolean> {
-  const secretKey = process.env.RECAPTCHA_SECRET_KEY;
-  
-  if (!secretKey) {
-    console.warn('reCAPTCHA secret key not configured');
-    return true; // Allow if not configured
-  }
-
-  try {
-    const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: `secret=${secretKey}&response=${token}`,
-    });
-
-    const data = await response.json();
-    
-    // For reCAPTCHA v3, check score (0.0 - 1.0, where 1.0 is very likely a human)
-    // Typical threshold is 0.5
-    return data.success && data.score >= 0.5;
-  } catch (error) {
-    console.error('reCAPTCHA verification error:', error);
-    return false;
-  }
-}
 
 async function addToNewsletterFile(email: string): Promise<void> {
   const dataPath = path.join(process.cwd(), 'data', 'newsletter.json');
@@ -63,7 +38,7 @@ async function addToNewsletterFile(email: string): Promise<void> {
 
 export async function POST(request: NextRequest) {
   try {
-    const { email, recaptchaToken } = await request.json();
+    const { email } = await request.json();
     
     // Validate email
     if (!email || typeof email !== 'string') {
@@ -74,14 +49,6 @@ export async function POST(request: NextRequest) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return NextResponse.json({ error: 'Invalid email format' }, { status: 400 });
-    }
-
-    // Verify reCAPTCHA if token provided
-    if (recaptchaToken) {
-      const isHuman = await verifyRecaptcha(recaptchaToken);
-      if (!isHuman) {
-        return NextResponse.json({ error: 'Security verification failed' }, { status: 403 });
-      }
     }
 
     // Add to local JSON file

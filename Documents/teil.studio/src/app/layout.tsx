@@ -17,14 +17,13 @@ export const metadata: Metadata = {
   description: "Brand strategy consultant specializing in positioning, story, and identity that connects and evolves as culture shifts. Building brands with audience insight and modern tools.",
   icons: {
     icon: [
-      { url: "/logos/flavicon_teil.ico" },
-      { url: "/logos/flavicon_teil.png", type: "image/png" },
+      { url: "/logos/flavicon_teil.svg", type: "image/svg+xml" },
     ],
     apple: [
-      { url: "/logos/flavicon_teil.png", sizes: "180x180", type: "image/png" },
+      { url: "/logos/flavicon_teil.svg", sizes: "180x180", type: "image/svg+xml" },
     ],
     shortcut: [
-      { url: "/logos/flavicon_teil.ico" },
+      { url: "/logos/flavicon_teil.svg" },
     ],
   },
 };
