@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 export default function Journal() {
   return (
-    <div className="bg-white relative min-h-screen">
+    <div className="bg-[#f7f2e8] relative min-h-screen">
       {/* Navigation */}
       <Navigation currentPage="journal" />
 

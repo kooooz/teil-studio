@@ -77,7 +77,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-8 font-['Maison_Neue_Mono',_sans-serif] text-[16px] text-[#1a2e66]">
+        <div className="md:hidden fixed inset-0 bg-[#f7f2e8] z-40 flex flex-col items-center justify-center space-y-8 font-['Maison_Neue_Mono',_sans-serif] text-[16px] text-[#1a2e66]">
           <Link 
             href="/about" 
             onClick={() => setMobileMenuOpen(false)}

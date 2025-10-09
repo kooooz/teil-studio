@@ -61,6 +61,7 @@ export default function Footer({ variant = 'absolute' }: { variant?: FooterVaria
           <div className="space-y-2 mt-2" data-node-id="31:5">
             <Link href="/legal-notice" className="block font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-white hover:opacity-80">Legal Notice</Link>
             <Link href="/data-protection" className="block font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-white hover:opacity-80" data-node-id="31:8">Data Protection</Link>
+            <Link href="/cookie-preferences" className="block font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-white hover:opacity-80">Cookie Preferences</Link>
           </div>
 
           {/* Center Section - More teil.studio */}
@@ -152,6 +153,7 @@ export default function Footer({ variant = 'absolute' }: { variant?: FooterVaria
           <div className="space-y-2 mt-2" data-node-id="31:5">
             <a href="/legal-notice" className="block font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-white hover:opacity-80">Legal Notice</a>
             <a href="/data-protection" className="block font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-white hover:opacity-80" data-node-id="31:8">Data Protection</a>
+            <a href="/cookie-preferences" className="block font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-white hover:opacity-80">Cookie Preferences</a>
           </div>
 
           {/* Center Section - More teil.studio */}

@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 export default function Services() {
   return (
-    <div className="bg-white relative min-h-screen" data-name="Services" data-node-id="36:349">
+    <div className="bg-[#f7f2e8] relative min-h-screen" data-name="Services" data-node-id="36:349">
       {/* Navigation */}
       <Navigation currentPage="services" />
 

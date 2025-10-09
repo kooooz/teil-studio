@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import CookieConsent from "@/components/CookieConsent";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,13 +18,13 @@ export const metadata: Metadata = {
   description: "Brand strategy consultant specializing in positioning, story, and identity that connects and evolves as culture shifts. Building brands with audience insight and modern tools.",
   icons: {
     icon: [
-      { url: "/logos/flavicon_teil.svg", type: "image/svg+xml" },
+      { url: "/logos/flavicon_teil.svg", type: "image/svg+xml", sizes: "16x16" },
     ],
     apple: [
       { url: "/logos/flavicon_teil.svg", sizes: "180x180", type: "image/svg+xml" },
     ],
     shortcut: [
-      { url: "/logos/flavicon_teil.svg" },
+      { url: "/logos/flavicon_teil.svg", sizes: "16x16" },
     ],
   },
 };
@@ -39,6 +40,7 @@ export default function RootLayout({
         <div className="flex-1 flex flex-col">
           {children}
         </div>
+        <CookieConsent />
       </body>
     </html>
   );

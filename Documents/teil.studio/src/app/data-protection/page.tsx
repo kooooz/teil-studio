@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 
 export default function DataProtection() {
   return (
-    <div className="bg-white relative min-h-screen">
+    <div className="bg-[#f7f2e8] relative min-h-screen">
       <Navigation currentPage="" />
       <main className="pt-48 px-[110px] pb-32 max-w-[1221px] mx-auto">
         <h1 className="font-['Artifex_Hand_CF',_sans-serif] text-[30px] leading-[45px] text-[#1a2e66] mb-8">Datenschutzerklärung</h1>

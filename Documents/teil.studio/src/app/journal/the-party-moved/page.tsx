@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 export default function ThePartyMoved() {
   return (
-    <div className="bg-white relative min-h-screen">
+    <div className="bg-[#f7f2e8] relative min-h-screen">
       <Navigation currentPage="journal" />
 
       <main className="pt-32 pb-32">
