@@ -5,12 +5,12 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="bg-[#f7f2e8] relative w-full min-h-screen" data-name="Home" data-node-id="1:2">
+    <div className="bg-[#f7f2e8] relative w-full min-h-screen overflow-x-hidden" data-name="Home" data-node-id="1:2">
       {/* Hero Image with crowd */}
       <div className="relative h-[818px] w-full" data-name="Header Image" data-node-id="106:6">
         <Image 
           alt="Hero image" 
-          src="/images/hero-crowd.png"
+          src="/images/Header Image.png"
           fill
           className="object-cover"
           priority
@@ -21,8 +21,8 @@ export default function Home() {
       <Navigation currentPage="home" />
 
       {/* Hero Title - Overlaid on hero image, left side */}
-      <div className="absolute left-[110px] top-[558px] w-[1310px]" data-node-id="35:164">
-        <h1 className="capitalize font-['Artifex_Hand_CF',_sans-serif] leading-[75px] text-[70px] text-white">
+      <div className="absolute left-6 md:left-[110px] top-[558px] w-full md:w-[1310px] px-6 md:px-0" data-node-id="35:164">
+        <h1 className="capitalize font-['Artifex_Hand_CF',_sans-serif] leading-[50px] md:leading-[75px] text-[40px] md:text-[70px] text-white">
           Brand Strategy
           <br />
           Built Around People,
@@ -32,92 +32,123 @@ export default function Home() {
       </div>
 
       {/* Subtitle - Top right of hero */}
-      <div className="absolute left-[1042px] top-[707px] w-[298px]" data-node-id="35:165">
-        <p className="capitalize font-['Maison_Neue_Mono',_sans-serif] leading-[25px] text-[14px] text-white whitespace-pre-line">
+      <div className="absolute right-6 md:right-[110px] top-[707px] w-full md:w-[298px] px-6 md:px-0" data-node-id="35:165">
+        <p className="capitalize font-['Maison_Neue_Mono',_sans-serif] leading-[20px] md:leading-[25px] text-[12px] md:text-[14px] text-white whitespace-pre-line">
           We build brands with positioning,
           {'\n'}story, and identity that connect
           {'\n'}and evolve as culture shifts.
         </p>
       </div>
 
-      {/* First vertical divider */}
-      <div className="absolute bg-[#1a2e66] h-[286px] left-[722px] top-[856px] w-[4px]" data-node-id="106:156" />
+      {/* First vertical SVG graphic - left side */}
+      <div className="absolute left-6 md:left-[110px] top-[856px] w-[4px] h-[286px] hidden md:block" data-node-id="106:156">
+        <Image 
+          alt="Vertical decoration" 
+          src="/svg/Rectangle 37.svg"
+          width={4}
+          height={286}
+          className="object-cover"
+        />
+      </div>
+
+      {/* First vertical divider - center */}
+      <div className="absolute bg-[#1a2e66] h-[286px] left-1/2 transform -translate-x-1/2 md:left-[722px] md:transform-none top-[856px] w-[4px]" data-node-id="106:156" />
 
       {/* Centered brick/stone image */}
-      <div className="absolute left-[412px] top-[1106px] w-[577px] h-[577px]" data-name="brick 1" data-node-id="106:158">
+      <div className="absolute left-1/2 transform -translate-x-1/2 md:left-[412px] md:transform-none top-[1106px] w-[300px] md:w-[577px] h-[300px] md:h-[577px]" data-name="brick 1" data-node-id="106:158">
         <Image 
           alt="Brick center" 
           src="/images/brick-center.png"
           width={577}
           height={577}
+          className="object-cover w-full h-full"
+        />
+      </div>
+
+      {/* Second vertical SVG graphic - left side */}
+      <div className="absolute left-6 md:left-[110px] top-[1709px] w-[4px] h-[286px] hidden md:block" data-node-id="106:169">
+        <Image 
+          alt="Vertical decoration" 
+          src="/svg/Rectangle 37.svg"
+          width={4}
+          height={286}
           className="object-cover"
         />
       </div>
 
-      {/* Second vertical divider */}
-      <div className="absolute bg-[#1a2e66] h-[286px] left-[722px] top-[1709px] w-[4px]" data-node-id="106:169" />
+      {/* Second vertical divider - center */}
+      <div className="absolute bg-[#1a2e66] h-[286px] left-1/2 transform -translate-x-1/2 md:left-[722px] md:transform-none top-[1709px] w-[4px]" data-node-id="106:169" />
 
-      {/* Left text block */}
-      <div className="absolute left-[213px] top-[1746px] w-[384px]" data-node-id="12:14">
-        <p className="font-['Maison_Neue_Mono',_sans-serif] leading-[35px] text-[#1a2e66] text-[18px]">
-          Staying relevant feels harder than ever. Audiences shift overnight, AI changes the rules daily, and what worked last year already feels out of date. How do you build a brand that keeps up?
-        </p>
-      </div>
+      {/* Text blocks container */}
+      <div className="absolute left-6 md:left-[213px] top-[1746px] w-full md:w-auto px-6 md:px-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-0">
+          {/* Left text block */}
+          <div className="md:w-[384px]" data-node-id="12:14">
+            <p className="font-['Maison_Neue_Mono',_sans-serif] leading-[30px] md:leading-[35px] text-[#1a2e66] text-[16px] md:text-[18px]">
+              Staying relevant feels harder than ever. Audiences shift overnight, AI changes the rules daily, and what worked last year already feels out of date. How do you build a brand that keeps up?
+            </p>
+          </div>
 
-      {/* Right text block */}
-      <div className="absolute left-[831px] top-[1746px] w-[388px]" data-node-id="18:13">
-        <p className="font-['Maison_Neue_Mono',_sans-serif] leading-[35px] text-[#1a2e66] text-[18px]">
-          Yesterday's playbooks don't work anymore. teil.studio turns audience insight, sharp positioning, and modern tools into brand systems that connect now and evolve with what's next.
-        </p>
+          {/* Right text block */}
+          <div className="md:ml-[246px] md:w-[388px]" data-node-id="18:13">
+            <p className="font-['Maison_Neue_Mono',_sans-serif] leading-[30px] md:leading-[35px] text-[#1a2e66] text-[16px] md:text-[18px]">
+              Yesterday's playbooks don't work anymore. teil.studio turns audience insight, sharp positioning, and modern tools into brand systems that connect now and evolve with what's next.
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* 2x2 Image Grid */}
-      {/* Top left - Breakfast */}
-      <div className="absolute h-[506px] left-[213px] rounded-[8px] top-[2128px] w-[500px]" data-node-id="106:180">
-        <Image 
-          alt="Content breakfast" 
-          src="/images/grid-breakfast.png"
-          width={500}
-          height={506}
-          className="object-cover rounded-[8px]"
-        />
-      </div>
+      <div className="absolute left-6 md:left-[213px] top-[2128px] w-full md:w-[1015px] px-6 md:px-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-[15px]">
+          {/* Top left - Breakfast */}
+          <div className="h-[250px] md:h-[506px] rounded-[8px] overflow-hidden" data-node-id="106:180">
+            <Image 
+              alt="Content breakfast" 
+              src="/images/Rectangle 38.png"
+              width={500}
+              height={506}
+              className="object-cover rounded-[8px] w-full h-full"
+            />
+          </div>
 
-      {/* Top right - Running */}
-      <div className="absolute h-[506px] left-[728px] rounded-[8px] top-[2128px] w-[500px]" data-name="content-group urban running" data-node-id="109:4">
-        <Image 
-          alt="Content group urban running" 
-          src="/images/grid-running.png"
-          width={500}
-          height={506}
-          className="object-cover rounded-[8px]"
-        />
-      </div>
+          {/* Top right - Running */}
+          <div className="h-[250px] md:h-[506px] rounded-[8px] overflow-hidden" data-name="content-group urban running" data-node-id="109:4">
+            <Image 
+              alt="Content group urban running" 
+              src="/images/content-group urban running.png"
+              width={500}
+              height={506}
+              className="object-cover rounded-[8px] w-full h-full"
+            />
+          </div>
 
-      {/* Bottom left - Skincare */}
-      <div className="absolute h-[506px] left-[213px] rounded-[8px] top-[2658px] w-[500px]" data-node-id="106:182">
-        <Image 
-          alt="Content skincare" 
-          src="/images/grid-skincare.png"
-          width={500}
-          height={506}
-          className="object-cover rounded-[8px]"
-        />
-      </div>
+          {/* Bottom left - Skincare */}
+          <div className="h-[250px] md:h-[506px] rounded-[8px] overflow-hidden" data-node-id="106:182">
+            <Image 
+              alt="Content skincare" 
+              src="/images/Rectangle 39.png"
+              width={500}
+              height={506}
+              className="object-cover rounded-[8px] w-full h-full"
+            />
+          </div>
 
-      {/* Bottom right - Fabric */}
-      <div className="absolute h-[506px] left-[728px] rounded-[8px] top-[2658px] w-[500px]" data-node-id="106:184">
-        <Image 
-          alt="Content fabric" 
-          src="/images/grid-fabric.png"
-          width={500}
-          height={506}
-          className="object-cover rounded-[8px]"
-        />
+          {/* Bottom right - Fabric */}
+          <div className="h-[250px] md:h-[506px] rounded-[8px] overflow-hidden" data-node-id="106:184">
+            <Image 
+              alt="Content fabric" 
+              src="/images/Rectangle 40.png"
+              width={500}
+              height={506}
+              className="object-cover rounded-[8px] w-full h-full"
+            />
+          </div>
+        </div>
       </div>
 
       {/* Large bottom image - Gen Z woman */}
-      <div className="absolute h-[816px] left-0 top-[3339px] w-full">
+      <div className="absolute h-[400px] md:h-[816px] left-0 top-[3339px] w-full">
         <Image 
           alt="Woman in green" 
           src="/images/content-group of gen z.jpg"
@@ -127,7 +158,7 @@ export default function Home() {
       </div>
 
       {/* CTA Button - Centered */}
-      <div className="absolute left-[635px] top-[4266px] w-[169px]" data-name="CTA Button" data-node-id="106:173">
+      <div className="absolute left-1/2 transform -translate-x-1/2 md:left-[635px] md:transform-none top-[4266px] w-[169px]" data-name="CTA Button" data-node-id="106:173">
         <Link 
           href="/contact" 
           className="bg-[#1a2e66] h-[44px] rounded-[15px] w-full hover:opacity-90 transition-opacity flex items-center justify-center" 
@@ -139,7 +170,7 @@ export default function Home() {
         </Link>
       </div>
 
-      {/* Footer - positioned at top 4403px as per Figma */}
+      {/* Footer - positioned lower to not cover the bottom image */}
       <Footer variant="absolute" />
     </div>
   );

@@ -1,0 +1,31 @@
+{
+  "subscribers": [
+    {
+      "email": "test-free@example.com",
+      "timestamp": "2025-10-07T16:23:19.084Z",
+      "id": "1759854199095"
+    },
+    {
+      "email": "kolja@orzeszko.de",
+      "timestamp": "2025-10-07T16:24:35.137Z",
+      "id": "1759854275137"
+    },
+    {
+      "email": "boris@web.de",
+      "timestamp": "2025-10-07T16:25:36.864Z",
+      "id": "1759854336864"
+    },
+    {
+      "email": "test-recaptcha@example.com",
+      "timestamp": "2025-10-07T16:26:41.493Z",
+      "id": "1759854401494"
+    }
+  ],
+  "lastUpdated": "2025-10-07T16:26:41.494Z"
+}
+
+
+
+
+
+
