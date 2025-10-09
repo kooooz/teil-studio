@@ -28,14 +28,14 @@ export default function Navigation({ currentPage }: NavigationProps) {
   // Determine text color based on scroll position and background
   // Navigation text should be white when over hero (dark background), then switch to dark blue (light background)
   const textColor = isOverHero ? '#ffffff' : '#1a2e66';
-  // Only show background when scrolled AND over light background
-  const backgroundColor = isScrolled && !isOverHero ? 'bg-white/90 backdrop-blur-sm' : 'bg-transparent';
+  // Only show subtle background blur when scrolled AND over light background
+  const backgroundColor = isScrolled && !isOverHero ? 'bg-white/20 backdrop-blur-md' : 'bg-transparent';
 
   return (
     <>
-      <div className={`fixed left-6 md:left-[110px] top-[46px] right-6 md:right-[110px] h-[28px] z-50 transition-all duration-300 ${backgroundColor}`} data-name="Nav bar" data-node-id="91:59">
+      <div className={`fixed left-6 md:left-[110px] top-[46px] right-6 md:right-[110px] h-[28px] z-[9999] transition-all duration-300 ${backgroundColor}`} data-name="Nav bar" data-node-id="91:59">
         {/* Logo */}
-        <div className="absolute left-0 bottom-0 w-[75px] h-[28px]" data-name="teil.studio header logo" data-node-id="69:22">
+        <div className={`absolute left-0 bottom-0 w-[75px] h-[28px] rounded-md ${isScrolled && !isOverHero ? 'bg-white/10 backdrop-blur-sm' : ''}`} data-name="teil.studio header logo" data-node-id="69:22">
           <Link href="/" className="block w-full h-full hover:opacity-70 transition-opacity">
             <Image 
               alt="teil.studio logo" 
@@ -48,7 +48,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
         </div>
         
         {/* Desktop Navigation Links */}
-        <div className="hidden md:flex absolute right-0 bottom-0 items-end space-x-8 font-['Maison_Neue_Mono',_sans-serif] text-[12px]" style={{ color: textColor }} data-name="Nav bar" data-node-id="14:2">
+        <div className={`hidden md:flex absolute right-0 bottom-0 items-end space-x-8 font-['Maison_Neue_Mono',_sans-serif] text-[12px] px-3 py-1 rounded-md ${isScrolled && !isOverHero ? 'bg-white/10 backdrop-blur-sm' : ''}`} style={{ color: textColor }} data-name="Nav bar" data-node-id="14:2">
           <Link href="/about" className={`hover:opacity-70 transition-opacity inline-block pb-[2px] ${currentPage === 'about' ? 'border-b' : 'border-b-0'}`} style={{ borderBottomColor: textColor }} data-node-id="14:3">
             about
           </Link>
@@ -80,7 +80,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 bg-[#f7f2e8] z-40 flex flex-col items-center justify-center space-y-8 font-['Maison_Neue_Mono',_sans-serif] text-[16px] text-[#1a2e66]">
+        <div className="md:hidden fixed inset-0 bg-[#f7f2e8] z-[9998] flex flex-col items-center justify-center space-y-8 font-['Maison_Neue_Mono',_sans-serif] text-[16px] text-[#1a2e66]">
           <Link 
             href="/about" 
             onClick={() => setMobileMenuOpen(false)}
