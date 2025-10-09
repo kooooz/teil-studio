@@ -17,11 +17,14 @@ export default function Navigation({ currentPage }: NavigationProps) {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       setIsScrolled(scrollY > 50);
-      // Hero section is 818px high, so navigation should be white until we scroll past it
-      setIsOverHero(scrollY < 818);
       
-      // Debug logging
-      console.log('Scroll:', scrollY, 'isOverHero:', scrollY < 818, 'Logo should be:', scrollY < 818 ? 'white' : 'blue');
+      // Only on homepage (when currentPage is 'home'), use white navigation over hero
+      if (currentPage === 'home') {
+        setIsOverHero(scrollY < 818);
+      } else {
+        // On all other pages, always use blue navigation
+        setIsOverHero(false);
+      }
     };
 
     // Initial call to set correct state
@@ -29,7 +32,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
     
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [currentPage]);
 
   // Determine text color based on scroll position and background
   // Navigation text should be white when over hero (dark background), then switch to dark blue (light background)
@@ -49,7 +52,6 @@ export default function Navigation({ currentPage }: NavigationProps) {
               width={75}
               height={28}
               className="block w-full h-full"
-              onLoad={() => console.log('Logo loaded:', isOverHero ? 'white (Element 7 1)' : 'blue (Element 7 3)')}
             />
           </Link>
         </div>

@@ -42,7 +42,7 @@ export default function Home() {
 
 
       {/* Centered brick/stone image */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 top-[1106px] w-[300px] md:w-[577px] h-[300px] md:h-[577px]" data-name="brick 1" data-node-id="106:158">
+      <div className="absolute left-1/2 transform -translate-x-1/2 top-[1000px] w-[300px] md:w-[577px] h-[300px] md:h-[577px]" data-name="brick 1" data-node-id="106:158">
         <Image 
           alt="Brick center" 
           src="/images/brick-center.png"
@@ -79,10 +79,11 @@ export default function Home() {
           <div className="h-[250px] md:h-[506px] rounded-[8px] overflow-hidden" data-node-id="106:180">
             <Image 
               alt="Content breakfast" 
-              src="/images/Rectangle 38.png"
+              src="/images/grid-breakfast.png"
               width={500}
               height={506}
               className="object-cover rounded-[8px] w-full h-full"
+              quality={100}
             />
           </div>
 
@@ -90,10 +91,11 @@ export default function Home() {
           <div className="h-[250px] md:h-[506px] rounded-[8px] overflow-hidden" data-name="content-group urban running" data-node-id="109:4">
             <Image 
               alt="Content group urban running" 
-              src="/images/content-group urban running.png"
+              src="/images/grid-running.png"
               width={500}
               height={506}
               className="object-cover rounded-[8px] w-full h-full"
+              quality={100}
             />
           </div>
 
@@ -101,10 +103,11 @@ export default function Home() {
           <div className="h-[250px] md:h-[506px] rounded-[8px] overflow-hidden" data-node-id="106:182">
             <Image 
               alt="Content skincare" 
-              src="/images/Rectangle 39.png"
+              src="/images/grid-skincare.png"
               width={500}
               height={506}
               className="object-cover rounded-[8px] w-full h-full"
+              quality={100}
             />
           </div>
 
@@ -112,10 +115,11 @@ export default function Home() {
           <div className="h-[250px] md:h-[506px] rounded-[8px] overflow-hidden" data-node-id="106:184">
             <Image 
               alt="Content fabric" 
-              src="/images/Rectangle 40.png"
+              src="/images/grid-fabric.png"
               width={500}
               height={506}
               className="object-cover rounded-[8px] w-full h-full"
+              quality={100}
             />
           </div>
         </div>
