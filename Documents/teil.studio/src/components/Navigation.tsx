@@ -10,45 +10,21 @@ interface NavigationProps {
 
 export default function Navigation({ currentPage }: NavigationProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isOverHero, setIsOverHero] = useState(true);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      setIsScrolled(scrollY > 50);
-      
-      // Only on homepage (when currentPage is 'home'), use white navigation over hero
-      if (currentPage === 'home') {
-        setIsOverHero(scrollY < 818);
-      } else {
-        // On all other pages, always use blue navigation
-        setIsOverHero(false);
-      }
-    };
-
-    // Initial call to set correct state
-    handleScroll();
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [currentPage]);
-
-  // Determine text color based on scroll position and background
-  // Navigation text should be white when over hero (for contrast against dark background), then switch to dark blue (light background)
-  const textColor = isOverHero ? '#ffffff' : '#1a2e66';
-  // Only show subtle background blur when scrolled AND over light background
-  const backgroundColor = isScrolled && !isOverHero ? 'bg-white/20 backdrop-blur-md' : 'bg-transparent';
+  // Determine logo and text color based on current page
+  // Homepage uses blue logo + white text, other pages use white logo + dark blue text
+  const isHomePage = currentPage === 'home';
+  const textColor = isHomePage ? '#ffffff' : '#1a2e66';
 
   return (
     <>
-      <div className={`fixed left-6 md:left-[110px] top-[46px] right-6 md:right-[110px] h-[28px] z-[9999] transition-all duration-300 ${backgroundColor}`} data-name="Nav bar" data-node-id="91:59">
+      <div className="absolute left-6 md:left-[110px] top-[46px] right-6 md:right-[110px] h-[28px] z-[9999] transition-all duration-300" data-name="Nav bar" data-node-id="91:59">
         {/* Logo */}
-        <div className={`absolute left-0 w-[75px] h-[28px] rounded-md flex items-center ${isScrolled && !isOverHero ? 'bg-white/10 backdrop-blur-sm' : ''}`} data-name="teil.studio header logo" data-node-id="69:22">
+        <div className="absolute left-0 w-[75px] h-[28px] rounded-md flex items-center" data-name="teil.studio header logo" data-node-id="69:22">
           <Link href="/" className="block w-full h-full hover:opacity-70 transition-opacity">
     <Image
       alt="teil.studio logo"
-      src={isOverHero ? "/logos/Element 7 3.svg" : "/logos/Element 7 1.svg"}
+      src={isHomePage ? "/logos/Element 7 3.svg" : "/logos/Element 7 1.svg"}
       width={75}
       height={28}
       className="block w-full h-full"
@@ -57,7 +33,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
         </div>
         
         {/* Desktop Navigation Links */}
-        <div className={`hidden md:flex absolute right-0 items-center space-x-8 font-['Maison_Neue_Mono',_sans-serif] text-[12px] px-3 py-1 rounded-md ${isScrolled && !isOverHero ? 'bg-white/10 backdrop-blur-sm' : ''}`} style={{ color: textColor, height: '28px' }} data-name="Nav bar" data-node-id="14:2">
+        <div className="hidden md:flex absolute right-0 items-center space-x-8 font-['Maison_Neue_Mono',_sans-serif] text-[12px] px-3 py-1 rounded-md" style={{ color: textColor, height: '28px' }} data-name="Nav bar" data-node-id="14:2">
           <Link href="/about" className={`hover:opacity-70 transition-opacity inline-block pb-[2px] ${currentPage === 'about' ? 'border-b' : 'border-b-0'}`} style={{ borderBottomColor: textColor }} data-node-id="14:3">
             about
           </Link>
