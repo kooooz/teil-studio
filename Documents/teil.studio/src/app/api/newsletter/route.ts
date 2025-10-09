@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
 async function sendNewsletterSignup(email: string): Promise<void> {
   try {
     // Create transporter for PrivateEmail
-    const transporter = nodemailer.createTransporter({
+    const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST || 'mail.privateemail.com',
       port: parseInt(process.env.EMAIL_PORT || '465'),
       secure: true,
