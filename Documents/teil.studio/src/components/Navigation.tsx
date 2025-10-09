@@ -19,8 +19,14 @@ export default function Navigation({ currentPage }: NavigationProps) {
       setIsScrolled(scrollY > 50);
       // Hero section is 818px high, so navigation should be white until we scroll past it
       setIsOverHero(scrollY < 818);
+      
+      // Debug logging
+      console.log('Scroll:', scrollY, 'isOverHero:', scrollY < 818, 'Logo should be:', scrollY < 818 ? 'white' : 'blue');
     };
 
+    // Initial call to set correct state
+    handleScroll();
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -43,6 +49,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
               width={75}
               height={28}
               className="block w-full h-full"
+              onLoad={() => console.log('Logo loaded:', isOverHero ? 'white (Element 7 1)' : 'blue (Element 7 3)')}
             />
           </Link>
         </div>

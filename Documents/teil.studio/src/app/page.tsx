@@ -40,14 +40,9 @@ export default function Home() {
         </p>
       </div>
 
-      {/* First vertical divider - left side */}
-      <div className="absolute bg-[#1a2e66] h-[286px] left-6 md:left-[110px] top-[856px] w-[4px]" data-node-id="106:156" />
-
-      {/* First vertical divider - center */}
-      <div className="absolute bg-[#1a2e66] h-[286px] left-1/2 transform -translate-x-1/2 md:left-[722px] md:transform-none top-[856px] w-[4px]" data-node-id="106:156" />
 
       {/* Centered brick/stone image */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 md:left-[412px] md:transform-none top-[1106px] w-[300px] md:w-[577px] h-[300px] md:h-[577px]" data-name="brick 1" data-node-id="106:158">
+      <div className="absolute left-1/2 transform -translate-x-1/2 top-[1106px] w-[300px] md:w-[577px] h-[300px] md:h-[577px]" data-name="brick 1" data-node-id="106:158">
         <Image 
           alt="Brick center" 
           src="/images/brick-center.png"
@@ -57,25 +52,20 @@ export default function Home() {
         />
       </div>
 
-      {/* Second vertical divider - left side */}
-      <div className="absolute bg-[#1a2e66] h-[286px] left-6 md:left-[110px] top-[1709px] w-[4px]" data-node-id="106:169" />
-
-      {/* Second vertical divider - center */}
-      <div className="absolute bg-[#1a2e66] h-[286px] left-1/2 transform -translate-x-1/2 md:left-[722px] md:transform-none top-[1709px] w-[4px]" data-node-id="106:169" />
 
       {/* Text blocks container - centered */}
       <div className="absolute left-6 md:left-1/2 md:transform md:-translate-x-1/2 top-[1746px] w-full md:w-[1015px] px-6 md:px-0">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-[15px]">
           {/* Left text block */}
           <div className="md:w-[500px]" data-node-id="12:14">
-            <p className="font-['Maison_Neue_Mono',_sans-serif] leading-[30px] md:leading-[35px] text-[#1a2e66] text-[16px] md:text-[18px]">
+            <p className="font-['Maison_Neue_Mono',_sans-serif] leading-[20px] md:leading-[25px] text-[#1a2e66] text-[12px] md:text-[14px]">
               Staying relevant feels harder than ever. Audiences shift overnight, AI changes the rules daily, and what worked last year already feels out of date. How do you build a brand that keeps up?
             </p>
           </div>
 
           {/* Right text block */}
           <div className="md:w-[500px]" data-node-id="18:13">
-            <p className="font-['Maison_Neue_Mono',_sans-serif] leading-[30px] md:leading-[35px] text-[#1a2e66] text-[16px] md:text-[18px]">
+            <p className="font-['Maison_Neue_Mono',_sans-serif] leading-[20px] md:leading-[25px] text-[#1a2e66] text-[12px] md:text-[14px]">
               Yesterday's playbooks don't work anymore. teil.studio turns audience insight, sharp positioning, and modern tools into brand systems that connect now and evolve with what's next.
             </p>
           </div>
@@ -132,7 +122,7 @@ export default function Home() {
       </div>
 
       {/* CTA Button - Centered, directly above bottom image */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 top-[3339px] w-[169px]" data-name="CTA Button" data-node-id="106:173">
+      <div className="absolute left-1/2 transform -translate-x-1/2 top-[3266px] w-[169px]" data-name="CTA Button" data-node-id="106:173">
         <Link 
           href="/contact" 
           className="bg-[#1a2e66] h-[44px] rounded-[15px] w-full hover:opacity-90 transition-opacity flex items-center justify-center" 
