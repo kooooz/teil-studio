@@ -21,8 +21,8 @@ export default function About() {
           />
         </div>
 
-        {/* Hero Title - Right side of image, constrained to image height */}
-        <h1 className="absolute left-[720px] top-[287px] w-[591px] h-[582px] capitalize font-['Artifex_Hand_CF',_sans-serif] leading-[100px] text-[80px] text-[#1a2e66] flex items-start">
+        {/* Hero Title - Right side of image, moved up */}
+        <h1 className="absolute left-[720px] top-[187px] w-[591px] h-[582px] capitalize font-['Artifex_Hand_CF',_sans-serif] leading-[100px] text-[80px] text-[#1a2e66] flex items-start">
           I've spent my career building and scaling brands people actually care about.
         </h1>
       </div>
