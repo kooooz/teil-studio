@@ -40,16 +40,8 @@ export default function Home() {
         </p>
       </div>
 
-      {/* First vertical SVG graphic - left side */}
-      <div className="absolute left-6 md:left-[110px] top-[856px] w-[4px] h-[286px] hidden md:block" data-node-id="106:156">
-        <Image 
-          alt="Vertical decoration" 
-          src="/svg/Rectangle 37.svg"
-          width={4}
-          height={286}
-          className="object-cover"
-        />
-      </div>
+      {/* First vertical divider - left side */}
+      <div className="absolute bg-[#1a2e66] h-[286px] left-6 md:left-[110px] top-[856px] w-[4px]" data-node-id="106:156" />
 
       {/* First vertical divider - center */}
       <div className="absolute bg-[#1a2e66] h-[286px] left-1/2 transform -translate-x-1/2 md:left-[722px] md:transform-none top-[856px] w-[4px]" data-node-id="106:156" />
@@ -65,32 +57,24 @@ export default function Home() {
         />
       </div>
 
-      {/* Second vertical SVG graphic - left side */}
-      <div className="absolute left-6 md:left-[110px] top-[1709px] w-[4px] h-[286px] hidden md:block" data-node-id="106:169">
-        <Image 
-          alt="Vertical decoration" 
-          src="/svg/Rectangle 37.svg"
-          width={4}
-          height={286}
-          className="object-cover"
-        />
-      </div>
+      {/* Second vertical divider - left side */}
+      <div className="absolute bg-[#1a2e66] h-[286px] left-6 md:left-[110px] top-[1709px] w-[4px]" data-node-id="106:169" />
 
       {/* Second vertical divider - center */}
       <div className="absolute bg-[#1a2e66] h-[286px] left-1/2 transform -translate-x-1/2 md:left-[722px] md:transform-none top-[1709px] w-[4px]" data-node-id="106:169" />
 
-      {/* Text blocks container */}
-      <div className="absolute left-6 md:left-[213px] top-[1746px] w-full md:w-auto px-6 md:px-0">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-0">
+      {/* Text blocks container - centered */}
+      <div className="absolute left-6 md:left-1/2 md:transform md:-translate-x-1/2 top-[1746px] w-full md:w-[1015px] px-6 md:px-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-[15px]">
           {/* Left text block */}
-          <div className="md:w-[384px]" data-node-id="12:14">
+          <div className="md:w-[500px]" data-node-id="12:14">
             <p className="font-['Maison_Neue_Mono',_sans-serif] leading-[30px] md:leading-[35px] text-[#1a2e66] text-[16px] md:text-[18px]">
               Staying relevant feels harder than ever. Audiences shift overnight, AI changes the rules daily, and what worked last year already feels out of date. How do you build a brand that keeps up?
             </p>
           </div>
 
           {/* Right text block */}
-          <div className="md:ml-[246px] md:w-[388px]" data-node-id="18:13">
+          <div className="md:w-[500px]" data-node-id="18:13">
             <p className="font-['Maison_Neue_Mono',_sans-serif] leading-[30px] md:leading-[35px] text-[#1a2e66] text-[16px] md:text-[18px]">
               Yesterday's playbooks don't work anymore. teil.studio turns audience insight, sharp positioning, and modern tools into brand systems that connect now and evolve with what's next.
             </p>
@@ -98,8 +82,8 @@ export default function Home() {
         </div>
       </div>
 
-      {/* 2x2 Image Grid */}
-      <div className="absolute left-6 md:left-[213px] top-[2128px] w-full md:w-[1015px] px-6 md:px-0">
+      {/* 2x2 Image Grid - centered */}
+      <div className="absolute left-6 md:left-1/2 md:transform md:-translate-x-1/2 top-[2128px] w-full md:w-[1015px] px-6 md:px-0">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-[15px]">
           {/* Top left - Breakfast */}
           <div className="h-[250px] md:h-[506px] rounded-[8px] overflow-hidden" data-node-id="106:180">
@@ -147,18 +131,8 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Large bottom image - Gen Z woman */}
-      <div className="absolute h-[400px] md:h-[816px] left-0 top-[3339px] w-full">
-        <Image 
-          alt="Woman in green" 
-          src="/images/content-group of gen z.jpg"
-          fill
-          className="object-cover"
-        />
-      </div>
-
-      {/* CTA Button - Centered */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 md:left-[635px] md:transform-none top-[4266px] w-[169px]" data-name="CTA Button" data-node-id="106:173">
+      {/* CTA Button - Centered, directly above bottom image */}
+      <div className="absolute left-1/2 transform -translate-x-1/2 top-[3339px] w-[169px]" data-name="CTA Button" data-node-id="106:173">
         <Link 
           href="/contact" 
           className="bg-[#1a2e66] h-[44px] rounded-[15px] w-full hover:opacity-90 transition-opacity flex items-center justify-center" 
@@ -168,6 +142,16 @@ export default function Home() {
             Let's talk
           </span>
         </Link>
+      </div>
+
+      {/* Bottom image - directly before footer */}
+      <div className="absolute h-[400px] md:h-[816px] left-0 top-[3403px] w-full">
+        <Image 
+          alt="Bottom image" 
+          src="/images/bottom image.png"
+          fill
+          className="object-cover"
+        />
       </div>
 
       {/* Footer - positioned lower to not cover the bottom image */}

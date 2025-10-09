@@ -142,7 +142,7 @@ export default function Footer({ variant = 'absolute' }: { variant?: FooterVaria
 
   // default: absolute (original start page behavior)
   return (
-    <div className="absolute left-0 top-[4500px] w-full" data-name="Footer" data-node-id="91:61">
+    <div className="absolute left-0 top-[4219px] w-full" data-name="Footer" data-node-id="91:61">
       <div className="absolute bg-[#1a2e66] h-[273px] left-0 top-0 w-full" data-node-id="18:15" />
       
       {/* Absolute Footer Content */}
