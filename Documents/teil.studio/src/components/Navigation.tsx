@@ -25,12 +25,13 @@ export default function Navigation({ currentPage }: NavigationProps) {
   }, []);
 
   // Determine text color based on scroll position and background
-  const textColor = isOverHero ? '#1a2e66' : '#ffffff';
+  // Navigation text should be white when over hero, then switch to dark blue
+  const textColor = isOverHero ? '#ffffff' : '#1a2e66';
   const backgroundColor = isScrolled ? 'bg-white/90 backdrop-blur-sm' : 'bg-transparent';
 
   return (
     <>
-      <div className={`fixed left-6 md:left-[110px] top-[32px] right-6 md:right-[110px] h-[28px] z-50 transition-all duration-300 ${backgroundColor}`} data-name="Nav bar" data-node-id="91:59">
+      <div className={`fixed left-6 md:left-[110px] top-[46px] right-6 md:right-[110px] h-[28px] z-50 transition-all duration-300 ${backgroundColor}`} data-name="Nav bar" data-node-id="91:59">
         {/* Logo */}
         <div className="absolute left-0 bottom-0 w-[75px] h-[28px]" data-name="teil.studio header logo" data-node-id="69:22">
           <Link href="/" className="block w-full h-full hover:opacity-70 transition-opacity">

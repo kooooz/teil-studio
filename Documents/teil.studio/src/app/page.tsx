@@ -117,7 +117,7 @@ export default function Home() {
       </div>
 
       {/* Large bottom image - Gen Z woman */}
-      <div className="absolute h-[818px] left-0 top-[3448px] w-full">
+      <div className="absolute h-[816px] left-0 top-[3339px] w-full">
         <Image 
           alt="Woman in green" 
           src="/images/content-group of gen z.jpg"
@@ -139,7 +139,7 @@ export default function Home() {
         </Link>
       </div>
 
-      {/* Footer */}
+      {/* Footer - positioned at top 4403px as per Figma */}
       <Footer variant="absolute" />
     </div>
   );
