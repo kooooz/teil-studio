@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
     // Allow deployment even if there are ESLint errors; we'll fix content issues separately
     ignoreDuringBuilds: true,
   },
+  outputFileTracingRoot: __dirname,
 };
 
 export default nextConfig;
