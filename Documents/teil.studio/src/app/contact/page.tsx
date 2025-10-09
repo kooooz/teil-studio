@@ -141,7 +141,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleInputChange}
                   placeholder="John Doe"
-                  className="w-full bg-[#f7f2e8] h-[41px] rounded-[8px] px-4 font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-[#1a2e66]"
+                  className="w-full bg-white h-[41px] rounded-[8px] px-4 font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-[#1a2e66]"
                 />
               </div>
               <div className="flex-1">
@@ -154,7 +154,7 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="john.doe@abc.inc"
-                  className="w-full bg-[#f7f2e8] h-[41px] rounded-[8px] px-4 font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-[#1a2e66]"
+                  className="w-full bg-white h-[41px] rounded-[8px] px-4 font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-[#1a2e66]"
                 />
               </div>
             </div>
@@ -200,7 +200,7 @@ export default function Contact() {
                 onChange={handleInputChange}
                 placeholder="Tell us more"
                 rows={5}
-                className="w-full bg-[#f7f2e8] min-h-[120px] rounded-[8px] px-4 py-3 font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-[#1a2e66] resize-y"
+                className="w-full bg-white min-h-[120px] rounded-[8px] px-4 py-3 font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-[#1a2e66] resize-y"
               />
             </div>
 
