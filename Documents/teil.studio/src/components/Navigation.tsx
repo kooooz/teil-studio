@@ -35,8 +35,8 @@ export default function Navigation({ currentPage }: NavigationProps) {
   }, [currentPage]);
 
   // Determine text color based on scroll position and background
-  // Navigation text should be white when over hero (dark background), then switch to dark blue (light background)
-  const textColor = isOverHero ? '#ffffff' : '#1a2e66';
+  // Navigation text should be dark blue when over hero (since logo is now blue), then switch to white (light background)
+  const textColor = isOverHero ? '#1a2e66' : '#ffffff';
   // Only show subtle background blur when scrolled AND over light background
   const backgroundColor = isScrolled && !isOverHero ? 'bg-white/20 backdrop-blur-md' : 'bg-transparent';
 
@@ -46,13 +46,13 @@ export default function Navigation({ currentPage }: NavigationProps) {
         {/* Logo */}
         <div className={`absolute left-0 w-[75px] h-[28px] rounded-md flex items-center ${isScrolled && !isOverHero ? 'bg-white/10 backdrop-blur-sm' : ''}`} data-name="teil.studio header logo" data-node-id="69:22">
           <Link href="/" className="block w-full h-full hover:opacity-70 transition-opacity">
-            <Image 
-              alt="teil.studio logo" 
-              src={isOverHero ? "/logos/Element 7 1.svg" : "/logos/Element 7 3.svg"}
-              width={75}
-              height={28}
-              className="block w-full h-full"
-            />
+    <Image
+      alt="teil.studio logo"
+      src={isOverHero ? "/logos/Element 7 3.svg" : "/logos/Element 7 1.svg"}
+      width={75}
+      height={28}
+      className="block w-full h-full"
+    />
           </Link>
         </div>
         
