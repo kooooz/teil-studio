@@ -14,7 +14,7 @@ export default function Work() {
           {/* Project 1: Olin Skincare */}
           <div className="min-h-screen flex flex-col justify-center gap-10">
             <div className="flex justify-center px-6">
-              <Image alt="Olin Skincare Work" src="/images/olin shot.png" width={600} height={600} className="rounded-[8px] w-full max-w-[600px] h-auto" />
+              <Image alt="Olin Skincare Work" src="/images/olin.png" width={600} height={600} className="rounded-[8px] w-full max-w-[600px] h-auto" />
             </div>
             <div className="w-full px-6 md:pl-[110px] md:pr-0">
               <p className="font-['Maison_Neue_Mono',_sans-serif] leading-[20px] text-[12px] text-[#1a2e66] text-left">
