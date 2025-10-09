@@ -13,7 +13,7 @@ export default function ThePartyMoved() {
         <div className="relative w-full h-[60vh] min-h-[360px]">
           <Image
             alt="The Party Moved"
-            src="/images/The Party Moved.png?v=2"
+            src="/images/The Party Moved.png"
             fill
             className="object-cover object-bottom"
             priority
