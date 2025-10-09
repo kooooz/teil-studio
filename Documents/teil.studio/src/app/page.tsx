@@ -76,52 +76,60 @@ export default function Home() {
       <div className="absolute left-6 md:left-1/2 md:transform md:-translate-x-1/2 top-[2128px] w-full md:w-[1015px] px-6 md:px-0">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-[15px]">
           {/* Top left - Breakfast */}
-          <div className="h-[250px] md:h-[506px] rounded-[8px] overflow-hidden" data-node-id="106:180">
-            <Image 
-              alt="Content breakfast" 
-              src="/images/grid-breakfast.png"
-              width={500}
-              height={506}
-              className="object-cover rounded-[8px] w-full h-full"
-              quality={100}
-            />
-          </div>
+          <Link href="/work" className="block group">
+            <div className="h-[250px] md:h-[506px] rounded-[8px] overflow-hidden cursor-pointer" data-node-id="106:180">
+              <Image 
+                alt="Content breakfast" 
+                src="/images/grid-breakfast.png"
+                width={500}
+                height={506}
+                className="object-cover rounded-[8px] w-full h-full transition-transform duration-300 ease-out group-hover:scale-[1.02] group-hover:opacity-95"
+                quality={100}
+              />
+            </div>
+          </Link>
 
           {/* Top right - Running */}
-          <div className="h-[250px] md:h-[506px] rounded-[8px] overflow-hidden" data-name="content-group urban running" data-node-id="109:4">
-            <Image 
-              alt="Content group urban running" 
-              src="/images/grid-running.png"
-              width={500}
-              height={506}
-              className="object-cover rounded-[8px] w-full h-full"
-              quality={100}
-            />
-          </div>
+          <Link href="/work" className="block group">
+            <div className="h-[250px] md:h-[506px] rounded-[8px] overflow-hidden cursor-pointer" data-name="content-group urban running" data-node-id="109:4">
+              <Image 
+                alt="Content group urban running" 
+                src="/images/grid-running.png"
+                width={500}
+                height={506}
+                className="object-cover rounded-[8px] w-full h-full transition-transform duration-300 ease-out group-hover:scale-[1.02] group-hover:opacity-95"
+                quality={100}
+              />
+            </div>
+          </Link>
 
           {/* Bottom left - Skincare */}
-          <div className="h-[250px] md:h-[506px] rounded-[8px] overflow-hidden" data-node-id="106:182">
-            <Image 
-              alt="Content skincare" 
-              src="/images/grid-skincare.png"
-              width={500}
-              height={506}
-              className="object-cover rounded-[8px] w-full h-full"
-              quality={100}
-            />
-          </div>
+          <Link href="/work" className="block group">
+            <div className="h-[250px] md:h-[506px] rounded-[8px] overflow-hidden cursor-pointer" data-node-id="106:182">
+              <Image 
+                alt="Content skincare" 
+                src="/images/grid-skincare.png"
+                width={500}
+                height={506}
+                className="object-cover rounded-[8px] w-full h-full transition-transform duration-300 ease-out group-hover:scale-[1.02] group-hover:opacity-95"
+                quality={100}
+              />
+            </div>
+          </Link>
 
           {/* Bottom right - Fabric */}
-          <div className="h-[250px] md:h-[506px] rounded-[8px] overflow-hidden" data-node-id="106:184">
-            <Image 
-              alt="Content fabric" 
-              src="/images/grid-fabric.png"
-              width={500}
-              height={506}
-              className="object-cover rounded-[8px] w-full h-full"
-              quality={100}
-            />
-          </div>
+          <Link href="/work" className="block group">
+            <div className="h-[250px] md:h-[506px] rounded-[8px] overflow-hidden cursor-pointer" data-node-id="106:184">
+              <Image 
+                alt="Content fabric" 
+                src="/images/grid-fabric.png"
+                width={500}
+                height={506}
+                className="object-cover rounded-[8px] w-full h-full transition-transform duration-300 ease-out group-hover:scale-[1.02] group-hover:opacity-95"
+                quality={100}
+              />
+            </div>
+          </Link>
         </div>
       </div>
 
