@@ -42,75 +42,36 @@ export default function Journal() {
         {/* Journal Articles Grid */}
         <div className="grid grid-cols-3 gap-6">
           {/* Article 1 */}
-          <div className="group cursor-pointer">
-            <div className="bg-gray-200 h-[326px] rounded-[8px] mb-6 overflow-hidden">
-              <Image 
-                alt="Journal Article 1" 
-                src="/images/content-group of gen z.jpg"
-                width={397}
-                height={326}
-                className="w-full h-full object-cover rounded-[8px] transition-transform duration-300 ease-out group-hover:scale-[1.03]"
-              />
-            </div>
-            <div className="text-center transition-colors duration-200">
-              <p className="font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-[#1a2e66] mb-4 group-hover:opacity-80">
-                Sep 29, 2025
-              </p>
-              <h3 className="capitalize font-['Artifex_Hand_CF',_sans-serif] leading-[50px] text-[30px] text-[#1a2e66] text-center mb-4 group-hover:underline">
-                The next Era of agencies
-              </h3>
-              <p className="font-['Maison_Neue_Mono',_sans-serif] leading-[25px] text-[14px] text-[#1a2e66] text-center group-hover:opacity-80">
-                We live in a world of constant change. Nothing seems to be...
-              </p>
-            </div>
+          <div className="bg-gray-200 h-[326px] rounded-[8px] overflow-hidden">
+            <Image 
+              alt="Journal Article 1" 
+              src="/images/content-group of gen z.jpg"
+              width={397}
+              height={326}
+              className="w-full h-full object-cover rounded-[8px]"
+            />
           </div>
 
           {/* Article 2 */}
-          <div className="group cursor-pointer">
-            <div className="bg-gray-200 h-[326px] rounded-[8px] mb-6 overflow-hidden">
-              <Image 
-                alt="Journal Article 2" 
-                src="/images/content-mobile device gen z.jpg"
-                width={397}
-                height={326}
-                className="w-full h-full object-cover rounded-[8px] transition-transform duration-300 ease-out group-hover:scale-[1.03]"
-              />
-            </div>
-            <div className="text-center transition-colors duration-200">
-              <p className="font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-[#1a2e66] mb-4 group-hover:opacity-80">
-                Sep 29, 2025
-              </p>
-              <h3 className="capitalize font-['Artifex_Hand_CF',_sans-serif] leading-[50px] text-[30px] text-[#1a2e66] text-center mb-4 group-hover:underline">
-                The next Era of agencies
-              </h3>
-              <p className="font-['Maison_Neue_Mono',_sans-serif] leading-[25px] text-[14px] text-[#1a2e66] text-center group-hover:opacity-80">
-                We live in a world of constant change. Nothing seems to be...
-              </p>
-            </div>
+          <div className="bg-gray-200 h-[326px] rounded-[8px] overflow-hidden">
+            <Image 
+              alt="Journal Article 2" 
+              src="/images/content-mobile device gen z.jpg"
+              width={397}
+              height={326}
+              className="w-full h-full object-cover rounded-[8px]"
+            />
           </div>
 
           {/* Article 3 */}
-          <div className="group cursor-pointer">
-            <div className="bg-gray-200 h-[326px] rounded-[8px] mb-6 overflow-hidden">
-              <Image 
-                alt="Journal Article 3" 
-                src="/images/content-group urban running.jpg"
-                width={397}
-                height={326}
-                className="w-full h-full object-cover rounded-[8px] transition-transform duration-300 ease-out group-hover:scale-[1.03]"
-              />
-            </div>
-            <div className="text-center transition-colors duration-200">
-              <p className="font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-[#1a2e66] mb-4 group-hover:opacity-80">
-                Sep 29, 2025
-              </p>
-              <h3 className="capitalize font-['Artifex_Hand_CF',_sans-serif] leading-[50px] text-[30px] text-[#1a2e66] text-center mb-4 group-hover:underline">
-                The next Era of agencies
-              </h3>
-              <p className="font-['Maison_Neue_Mono',_sans-serif] leading-[25px] text-[14px] text-[#1a2e66] text-center group-hover:opacity-80">
-                We live in a world of constant change. Nothing seems to be...
-              </p>
-            </div>
+          <div className="bg-gray-200 h-[326px] rounded-[8px] overflow-hidden">
+            <Image 
+              alt="Journal Article 3" 
+              src="/images/content-group urban running.jpg"
+              width={397}
+              height={326}
+              className="w-full h-full object-cover rounded-[8px]"
+            />
           </div>
         </div>
       </div>
