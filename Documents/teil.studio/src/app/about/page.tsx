@@ -9,7 +9,7 @@ export default function About() {
       <Navigation currentPage="about" />
 
       {/* Hero Section */}
-      <div className="relative pt-48 pb-32">
+      <div className="relative pt-48">
         {/* About Image - Left side */}
         <div className="absolute left-[109px] top-[187px] w-[500px] h-[582px]">
           <Image 
@@ -21,14 +21,14 @@ export default function About() {
           />
         </div>
 
-        {/* Hero Title - Right side */}
-        <h1 className="absolute right-[109px] top-[287px] w-[591px] capitalize font-['Artifex_Hand_CF',_sans-serif] leading-[100px] text-[80px] text-[#1a2e66]">
+        {/* Hero Title - Right side of image */}
+        <h1 className="absolute left-[720px] top-[287px] w-[591px] capitalize font-['Artifex_Hand_CF',_sans-serif] leading-[100px] text-[80px] text-[#1a2e66]">
           I've spent my career building and scaling brands people actually care about.
         </h1>
       </div>
 
-      {/* About Text - Two columns */}
-      <div className="relative px-[109px] pb-32">
+      {/* About Text - Two columns below the image */}
+      <div className="relative pt-[681px] px-[109px] pb-32">
         <div className="flex gap-12">
           <div className="w-[501px]">
             <p className="font-['Maison_Neue_Mono',_sans-serif] leading-[35px] text-[#1a2e66] text-[18px]">
