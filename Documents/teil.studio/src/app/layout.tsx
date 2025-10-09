@@ -18,13 +18,14 @@ export const metadata: Metadata = {
   description: "Brand strategy consultant specializing in positioning, story, and identity that connects and evolves as culture shifts. Building brands with audience insight and modern tools.",
   icons: {
     icon: [
-      { url: "/logos/flavicon_teil.svg", type: "image/svg+xml", sizes: "16x16" },
+      { url: "/favicon.ico", sizes: "16x16" },
+      { url: "/logos/flavicon_teil.svg", type: "image/svg+xml", sizes: "any" },
     ],
     apple: [
       { url: "/logos/flavicon_teil.svg", sizes: "180x180", type: "image/svg+xml" },
     ],
     shortcut: [
-      { url: "/logos/flavicon_teil.svg", sizes: "16x16" },
+      { url: "/favicon.ico", sizes: "16x16" },
     ],
   },
 };
@@ -36,6 +37,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="16x16" />
+        <link rel="icon" href="/logos/flavicon_teil.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/logos/flavicon_teil.svg" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}>
         <div className="flex-1 flex flex-col">
           {children}
