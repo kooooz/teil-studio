@@ -13,7 +13,7 @@ interface CookiePreferences {
 
 export default function CookiePreferences() {
   const [preferences, setPreferences] = useState<CookiePreferences>({
-    functionality: false,
+    functionality: true,
     experience: false,
     measurement: false,
     marketing: false,
@@ -23,7 +23,12 @@ export default function CookiePreferences() {
     // Load saved preferences
     const saved = localStorage.getItem('cookieConsent');
     if (saved) {
-      setPreferences(JSON.parse(saved));
+      const savedPrefs = JSON.parse(saved);
+      // Ensure functionality is always true (required)
+      setPreferences({
+        ...savedPrefs,
+        functionality: true
+      });
     }
   }, []);
 
