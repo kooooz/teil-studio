@@ -140,7 +140,7 @@ export default function Contact() {
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  placeholder="John Doe"
+                  placeholder="Mona Simpson"
                   className="w-full bg-white h-[41px] rounded-[8px] px-4 font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-[#1a2e66]"
                 />
               </div>
@@ -153,7 +153,7 @@ export default function Contact() {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  placeholder="john.doe@abc.inc"
+                  placeholder="mona.simpson@abc.inc"
                   className="w-full bg-white h-[41px] rounded-[8px] px-4 font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-[#1a2e66]"
                 />
               </div>
@@ -170,7 +170,7 @@ export default function Contact() {
                 value={formData.company}
                 onChange={handleInputChange}
                 placeholder="ABC inc."
-                className="w-full bg-[#f7f2e8] h-[41px] rounded-[8px] px-4 font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-[#1a2e66]"
+                className="w-full bg-white h-[41px] rounded-[8px] px-4 font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-[#1a2e66]"
               />
             </div>
 
@@ -185,7 +185,7 @@ export default function Contact() {
                 value={formData.website}
                 onChange={handleInputChange}
                 placeholder="www.abc.inc"
-                className="w-full bg-[#f7f2e8] h-[41px] rounded-[8px] px-4 font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-[#1a2e66]"
+                className="w-full bg-white h-[41px] rounded-[8px] px-4 font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-[#1a2e66]"
               />
             </div>
 
