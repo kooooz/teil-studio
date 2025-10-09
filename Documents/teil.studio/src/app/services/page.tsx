@@ -19,7 +19,7 @@ export default function Services() {
           {/* Services Grid */}
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Card 1 */}
-            <div className="bg-[#f7f2e8] rounded-[8px] px-5 pt-6 pb-6 text-left">
+            <div className="bg-white rounded-[8px] px-5 pt-6 pb-6 text-left">
               <div className="h-[68px] flex items-start">
                 <Image alt="Consumer Insight Icon" src="/svg/icon04 1.svg" width={55} height={64} className="block" />
               </div>
@@ -27,7 +27,7 @@ export default function Services() {
               <p className="mt-3 font-['Maison_Neue_Mono',_sans-serif] text-[14px] leading-[23px] text-[#1a2e66]">We go beyond demographics to understand how people think, feel, and act. Real signals from culture and behavior turned into clarity about what drives your audience.</p>
             </div>
             {/* Card 2 */}
-            <div className="bg-[#f7f2e8] rounded-[8px] px-5 pt-6 pb-6 text-left">
+            <div className="bg-white rounded-[8px] px-5 pt-6 pb-6 text-left">
               <div className="h-[68px] flex items-start">
                 <Image alt="Brand Foundations Icon" src="/svg/icon01 1.svg" width={44} height={68} className="block" />
               </div>
@@ -35,7 +35,7 @@ export default function Services() {
               <p className="mt-3 font-['Maison_Neue_Mono',_sans-serif] text-[14px] leading-[23px] text-[#1a2e66]">We define purpose, positioning, and architecture so your brand has a strong backbone — consistent, clear, and ready to scale.</p>
             </div>
             {/* Card 3 */}
-            <div className="bg-[#f7f2e8] rounded-[8px] px-5 pt-6 pb-6 text-left">
+            <div className="bg-white rounded-[8px] px-5 pt-6 pb-6 text-left">
               <div className="h-[68px] flex items-start">
                 <Image alt="Brand & Performance Icon" src="/svg/icon02 1.svg" width={32} height={67} className="block" />
               </div>
@@ -43,7 +43,7 @@ export default function Services() {
               <p className="mt-3 font-['Maison_Neue_Mono',_sans-serif] text-[14px] leading-[23px] text-[#1a2e66]">We bridge storytelling with performance. Building frameworks where creative brand building and measurable growth don't fight each other — they fuel each other.</p>
             </div>
             {/* Card 4 */}
-            <div className="bg-[#f7f2e8] rounded-[8px] px-5 pt-6 pb-6 text-left">
+            <div className="bg-white rounded-[8px] px-5 pt-6 pb-6 text-left">
               <div className="h-[68px] flex items-start">
                 <Image alt="Go-To-Market Icon" src="/svg/icon03 1.svg" width={65} height={62} className="block" />
               </div>
