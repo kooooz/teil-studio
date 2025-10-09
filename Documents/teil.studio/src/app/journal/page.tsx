@@ -17,7 +17,7 @@ export default function Journal() {
             <div className="relative bg-gray-200 h-[452px] rounded-[8px] mb-8 overflow-hidden">
               <Image 
                 alt="Featured Journal Article" 
-                src="/images/The Party Moved.png?v=2"
+                src="/images/The Party Moved.png"
                 width={1221}
                 height={452}
                 className="w-full h-full object-cover object-bottom rounded-[8px] transition-transform duration-300 ease-out group-hover:scale-[1.02] group-hover:opacity-95"
@@ -39,41 +39,6 @@ export default function Journal() {
           </Link>
         </div>
 
-        {/* Journal Articles Grid */}
-        <div className="grid grid-cols-3 gap-6">
-          {/* Article 1 */}
-          <div className="bg-gray-200 h-[326px] rounded-[8px] overflow-hidden">
-            <Image 
-              alt="Journal Article 1" 
-              src="/images/content-group of gen z.jpg"
-              width={397}
-              height={326}
-              className="w-full h-full object-cover rounded-[8px]"
-            />
-          </div>
-
-          {/* Article 2 */}
-          <div className="bg-gray-200 h-[326px] rounded-[8px] overflow-hidden">
-            <Image 
-              alt="Journal Article 2" 
-              src="/images/content-mobile device gen z.jpg"
-              width={397}
-              height={326}
-              className="w-full h-full object-cover rounded-[8px]"
-            />
-          </div>
-
-          {/* Article 3 */}
-          <div className="bg-gray-200 h-[326px] rounded-[8px] overflow-hidden">
-            <Image 
-              alt="Journal Article 3" 
-              src="/images/content-group urban running.jpg"
-              width={397}
-              height={326}
-              className="w-full h-full object-cover rounded-[8px]"
-            />
-          </div>
-        </div>
       </div>
 
       {/* Spacer: full-screen whitespace before footer */}
