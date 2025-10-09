@@ -35,8 +35,8 @@ export default function Navigation({ currentPage }: NavigationProps) {
   }, [currentPage]);
 
   // Determine text color based on scroll position and background
-  // Navigation text should be dark blue when over hero (since logo is now blue), then switch to white (light background)
-  const textColor = isOverHero ? '#1a2e66' : '#ffffff';
+  // Navigation text should be white when over hero (for contrast against dark background), then switch to dark blue (light background)
+  const textColor = isOverHero ? '#ffffff' : '#1a2e66';
   // Only show subtle background blur when scrolled AND over light background
   const backgroundColor = isScrolled && !isOverHero ? 'bg-white/20 backdrop-blur-md' : 'bg-transparent';
 
