@@ -17,7 +17,8 @@ export default function Navigation({ currentPage }: NavigationProps) {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       setIsScrolled(scrollY > 50);
-      setIsOverHero(scrollY < 600); // Hero section is about 818px high
+      // Hero section is 818px high, so navigation should be white until we scroll past it
+      setIsOverHero(scrollY < 818);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -25,9 +26,10 @@ export default function Navigation({ currentPage }: NavigationProps) {
   }, []);
 
   // Determine text color based on scroll position and background
-  // Navigation text should be white when over hero, then switch to dark blue
+  // Navigation text should be white when over hero (dark background), then switch to dark blue (light background)
   const textColor = isOverHero ? '#ffffff' : '#1a2e66';
-  const backgroundColor = isScrolled ? 'bg-white/90 backdrop-blur-sm' : 'bg-transparent';
+  // Only show background when scrolled AND over light background
+  const backgroundColor = isScrolled && !isOverHero ? 'bg-white/90 backdrop-blur-sm' : 'bg-transparent';
 
   return (
     <>
@@ -37,7 +39,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
           <Link href="/" className="block w-full h-full hover:opacity-70 transition-opacity">
             <Image 
               alt="teil.studio logo" 
-              src="/logos/Element 7 1.svg"
+              src={isOverHero ? "/logos/Element 7 1.svg" : "/logos/Element 7 3.svg"}
               width={75}
               height={28}
               className="block w-full h-full"
