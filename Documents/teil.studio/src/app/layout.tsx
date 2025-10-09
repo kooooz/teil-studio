@@ -19,14 +19,13 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "16x16" },
-      { url: "/logos/flavicon_teil.svg", type: "image/svg+xml", sizes: "any" },
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/logos/flavicon_teil.svg", type: "image/svg+xml" },
     ],
     apple: [
-      { url: "/logos/flavicon_teil.svg", sizes: "180x180", type: "image/svg+xml" },
+      { url: "/logos/flavicon_teil.svg", sizes: "180x180" },
     ],
-    shortcut: [
-      { url: "/favicon.ico", sizes: "16x16" },
-    ],
+    shortcut: "/favicon.ico",
   },
 };
 
@@ -39,8 +38,10 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="16x16" />
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="icon" href="/logos/flavicon_teil.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/logos/flavicon_teil.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/logos/flavicon_teil.svg" sizes="180x180" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}>
         <div className="flex-1 flex flex-col">
