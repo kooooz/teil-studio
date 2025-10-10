@@ -34,7 +34,7 @@ export default function Home() {
         </div>
 
         {/* Small centered brick - 30% bigger */}
-        <div className="mx-auto mt-16 w-[234px] h-[234px]">
+        <div className="mx-auto mt-16 w-[304px] h-[304px]">
           <Image alt="Brick center" src="/images/brick-center.png" width={577} height={577} className="object-cover w-full h-full" />
         </div>
 
