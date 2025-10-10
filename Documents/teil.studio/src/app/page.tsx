@@ -11,7 +11,7 @@ export default function Home() {
         {/* Hero with title overlay */}
         <div className="relative h-[520px] w-full">
           <Image alt="Hero image" src="/images/Header Image.png" fill className="object-cover" priority />
-          <div className="absolute left-6 bottom-10 w-[calc(100%-3rem)]">
+          <div className="absolute left-6 bottom-4 w-[calc(100%-3rem)]">
             <h1 className="capitalize font-['Artifex_Hand_CF',_sans-serif] leading-[42px] text-[34px] text-white">
               Brand Strategy
               <br />
@@ -33,13 +33,13 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Small centered brick */}
-        <div className="mx-auto mt-12 w-[180px] h-[180px]">
+        {/* Small centered brick - 30% bigger */}
+        <div className="mx-auto mt-16 w-[234px] h-[234px]">
           <Image alt="Brick center" src="/images/brick-center.png" width={577} height={577} className="object-cover w-full h-full" />
         </div>
 
         {/* Text blocks */}
-        <div className="px-6 mt-12 space-y-8">
+        <div className="px-6 mt-16 space-y-8">
           <p className="font-['Maison_Neue_Mono',_sans-serif] leading-[20px] text-[#1a2e66] text-[12px]">
             Staying relevant feels harder than ever. Audiences shift overnight, AI changes the rules daily, and what worked last year already feels out of date. How do you build a brand that keeps up?
           </p>
@@ -49,7 +49,7 @@ export default function Home() {
         </div>
 
         {/* Image stack from grid */}
-        <div className="px-0 mt-10 space-y-2">
+        <div className="px-0 mt-10 space-y-4">
           <Link href="/work" className="block">
             <div className="relative w-full aspect-square overflow-hidden">
               <Image alt="Content breakfast" src="/images/grid-breakfast.png" fill className="object-cover w-full h-full" />
@@ -73,7 +73,7 @@ export default function Home() {
         </div>
 
         {/* CTA */}
-        <div className="mx-auto my-12 w-[169px]">
+        <div className="mx-auto my-16 w-[169px]">
           <Link href="/contact" className="bg-[#1a2e66] h-[44px] rounded-[15px] w-full hover:opacity-90 transition-opacity flex items-center justify-center">
             <span className="font-['Artifex_Hand_CF',_sans-serif] text-[20px] text-white">Let's talk</span>
           </Link>

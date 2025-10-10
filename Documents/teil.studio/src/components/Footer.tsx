@@ -137,25 +137,37 @@ export default function Footer({ variant = 'absolute' }: { variant?: FooterVaria
           </div>
         </div>
 
-        {/* Mobile Footer - simplified layout matching screenshot */}
-        <div className="block md:hidden px-6 py-8 space-y-6">
+        {/* Mobile Footer - exactly matching screenshot */}
+        <div className="block md:hidden px-6 py-10 space-y-6">
           {/* Legal links */}
           <div className="space-y-2">
             <Link href="/legal-notice" className="block font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-white hover:opacity-80">Legal Notice</Link>
-            <Link href="/data-protection" className="block font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-white hover:opacity-80">Data Protection</Link>
+            <Link href="/data-protection" className="block font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-white hover:opacity-80">Privacy Policy</Link>
             <Link href="/cookie-preferences" className="block font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-white hover:opacity-80">Cookie Preferences</Link>
           </div>
 
-          {/* Divider */}
+          {/* First divider */}
           <div className="border-t border-white opacity-30"></div>
-          <p className="font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-white">More teil.studio</p>
 
-          {/* Divider */}
+          {/* More teil.studio section */}
+          <div className="space-y-2">
+            <p className="font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-white">More teil.studio</p>
+            <a
+              href="https://www.linkedin.com/in/koljaorzeszko"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-white hover:opacity-80"
+            >
+              LinkedIn
+            </a>
+          </div>
+
+          {/* Second divider */}
           <div className="border-t border-white opacity-30"></div>
-          <p className="font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-white">Want more teil.studio</p>
 
-          {/* Newsletter */}
+          {/* Newsletter section */}
           <div className="space-y-3">
+            <p className="font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-white">Want more teil.studio</p>
             <p className="font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-white">Get our emails. Updates.</p>
             <form onSubmit={handleNewsletterSignup} className="flex">
               {/* Honeypot field - hidden from humans, visible to bots */}
