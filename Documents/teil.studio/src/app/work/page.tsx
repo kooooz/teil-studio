@@ -11,9 +11,9 @@ export default function Work() {
       {/* Mobile-only layout */}
       <div className="block md:hidden">
         <main className="pt-24 pb-0">
-          <div className="space-y-6">
+          <div className="space-y-12">
             {/* Project 1: Olin Skincare */}
-            <div className="px-6">
+            <div className="px-6 mt-12">
               <Image alt="Olin Skincare Work" src="/images/olin.png" width={600} height={600} className="rounded-[8px] w-full h-auto" />
               <p className="font-['Maison_Neue_Mono',_sans-serif] leading-[20px] text-[12px] text-[#1a2e66] text-left mt-4">
                 [work]<br />
@@ -49,7 +49,7 @@ export default function Work() {
             </div>
 
             {/* Project 4: Geile Weine */}
-            <div className="px-6">
+            <div className="px-6 mb-12">
               <Image alt="Geile Weine Work" src="/images/work- geile weine.jpg" width={600} height={600} className="rounded-[8px] w-full h-auto" />
               <p className="font-['Maison_Neue_Mono',_sans-serif] leading-[20px] text-[12px] text-[#1a2e66] text-left mt-4">
                 [work]<br />

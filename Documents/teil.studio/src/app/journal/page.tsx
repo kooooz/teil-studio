@@ -21,7 +21,7 @@ export default function Journal() {
                   src="/images/The Party Moved.png"
                   width={1221}
                   height={452}
-                  className="w-full h-full object-cover object-bottom rounded-[8px]"
+                  className="w-full h-full object-cover object-left rounded-[8px]"
                 />
               </div>
               {/* Text below image */}

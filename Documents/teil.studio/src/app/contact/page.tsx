@@ -98,7 +98,7 @@ export default function Contact() {
         <Navigation currentPage="contact" />
 
         {/* Back Button */}
-        <div className="px-6 pt-24">
+        <div className="px-6 pt-48">
           <button 
             onClick={handleBack}
             className="flex items-center space-x-2 font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-[#1a2e66] hover:opacity-70 transition-opacity"
