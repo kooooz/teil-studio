@@ -10,14 +10,14 @@ export default function About() {
         <Navigation currentPage="about" />
 
         {/* Hero Title */}
-        <div className="px-6 pt-24">
+        <div className="px-6 pt-24 mb-16">
           <h1 className="capitalize font-['Artifex_Hand_CF',_sans-serif] leading-[42px] text-[34px] text-[#1a2e66]">
             I've Spent My Career Building And Scaling Brands People Care About.
           </h1>
         </div>
 
         {/* About Image */}
-        <div className="px-6 mt-8">
+        <div className="px-6 mb-16">
           <Image 
             alt="About Kolja" 
             src="/images/about image.jpg"
@@ -35,7 +35,7 @@ export default function About() {
         </div>
 
         {/* Text Block 2 */}
-        <div className="px-6 mt-8">
+        <div className="px-6 mt-8 mb-24">
           <p className="font-['Maison_Neue_Mono',_sans-serif] leading-[20px] text-[#1a2e66] text-[12px]">
             Over the years I've built a network of creatives, strategists, and industry operators who are some of the best at what they do. Designers, storytellers, researchers, and specialists I've worked with and trusted across projects and industries. At teil.studio, you get me as your strategy partner – but when the brief calls for it, I pull in the right people to make sure the work hits the highest level. No bloated teams. Just sharp expertise, plugged in exactly where it matters.
           </p>
