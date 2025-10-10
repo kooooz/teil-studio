@@ -54,9 +54,9 @@ export default function Footer({ variant = 'absolute' }: { variant?: FooterVaria
     return (
       <div className="w-full bg-[#1a2e66]" data-name="Footer" data-node-id="91:61">
         {/* Flow Footer Content - full width with 110px gutters like homepage */}
-        <div className="w-full px-6 md:px-0 flex flex-col justify-between pt-12 pb-12">
+        <div className="w-full px-6 md:px-0 flex flex-col justify-between pt-10 pb-10">
           {/* Top Section */}
-          <div className="grid md:grid-cols-3 grid-cols-1 items-start gap-x-10 gap-y-6 px-[110px]">
+          <div className="grid md:grid-cols-3 grid-cols-1 items-start gap-x-10 gap-y-6 md:px-[110px] px-6">
           {/* Left Section - Legal */}
           <div className="space-y-2 mt-2" data-node-id="31:5">
             <Link href="/legal-notice" className="block font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-white hover:opacity-80">Legal Notice</Link>
@@ -78,7 +78,7 @@ export default function Footer({ variant = 'absolute' }: { variant?: FooterVaria
         </div>
 
           {/* Bottom Section - All aligned to logo bottom */}
-          <div className="grid md:grid-cols-3 grid-cols-1 items-end gap-x-10 gap-y-6 md:gap-y-0 transform md:translate-y-[16px] px-[110px]">
+          <div className="grid md:grid-cols-3 grid-cols-1 items-start md:items-end gap-x-10 gap-y-8 md:gap-y-0 md:translate-y-[16px] md:px-[110px] px-6">
           {/* Left - Logo and Copyright */}
           <div className="flex items-end space-x-8">
             <div className="h-[28px] w-[75px] transform md:-translate-y-[6px]" data-name="teil.studio logo footer" data-node-id="69:189">
@@ -89,8 +89,8 @@ export default function Footer({ variant = 'absolute' }: { variant?: FooterVaria
             <span className="h-[28px] flex items-end font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-white whitespace-pre" data-node-id="69:199">©2025</span>
           </div>
 
-          {/* Center - LinkedIn (aligned to column start and bottom) */}
-          <div className="h-[28px] flex items-end">
+          {/* Center - LinkedIn (aligned to start on mobile) */}
+          <div className="h-[28px] flex items-end md:items-end">
             <a
               href="https://www.linkedin.com/in/koljaorzeszko"
               target="_blank"
@@ -104,8 +104,8 @@ export default function Footer({ variant = 'absolute' }: { variant?: FooterVaria
 
           {/* Right - Email Sign Up */}
           <div className="text-left flex flex-col justify-end" data-name="Email Sign Up" data-node-id="91:62">
-            <p className="font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-white whitespace-pre mb-4" data-node-id="31:14">Get our emails. Updates.</p>
-            <form onSubmit={handleNewsletterSignup} className="flex">
+            <p className="font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-white whitespace-pre mb-3" data-node-id="31:14">Get our emails. Updates.</p>
+            <form onSubmit={handleNewsletterSignup} className="flex w-full md:w-auto">
               {/* Honeypot field - hidden from humans, visible to bots */}
               <input
                 type="text"
@@ -117,7 +117,7 @@ export default function Footer({ variant = 'absolute' }: { variant?: FooterVaria
                 style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px' }}
                 aria-hidden="true"
               />
-              <div className="relative">
+              <div className="relative flex-1">
                 <input
                   type="email"
                   value={email}

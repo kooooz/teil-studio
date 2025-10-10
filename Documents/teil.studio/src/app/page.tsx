@@ -24,8 +24,17 @@ export default function Home() {
 
         <Navigation currentPage="home" />
 
+        {/* Subtitle under hero in blue */}
+        <div className="px-6 mt-4">
+          <p className="capitalize font-['Maison_Neue_Mono',_sans-serif] leading-[20px] text-[12px] text-[#1a2e66] whitespace-pre-line">
+            We build brands with positioning,
+            {'\n'}story, and identity that connect
+            {'\n'}and evolve as culture shifts.
+          </p>
+        </div>
+
         {/* Small centered brick */}
-        <div className="mx-auto mt-6 w-[180px] h-[180px]">
+        <div className="mx-auto mt-10 w-[180px] h-[180px]">
           <Image alt="Brick center" src="/images/brick-center.png" width={577} height={577} className="object-cover w-full h-full" />
         </div>
 
@@ -40,25 +49,25 @@ export default function Home() {
         </div>
 
         {/* Image stack from grid */}
-        <div className="px-6 mt-6 space-y-4">
+        <div className="px-0 mt-8 space-y-0">
           <Link href="/work" className="block">
-            <div className="h-[250px] rounded-[8px] overflow-hidden">
-              <Image alt="Content breakfast" src="/images/grid-breakfast.png" width={500} height={506} className="object-cover w-full h-full rounded-[8px]" />
+            <div className="relative w-full aspect-square overflow-hidden">
+              <Image alt="Content breakfast" src="/images/grid-breakfast.png" fill className="object-cover w-full h-full" />
             </div>
           </Link>
           <Link href="/work" className="block">
-            <div className="h-[250px] rounded-[8px] overflow-hidden">
-              <Image alt="Content group urban running" src="/images/grid-running.png" width={500} height={506} className="object-cover w-full h-full rounded-[8px]" />
+            <div className="relative w-full aspect-square overflow-hidden">
+              <Image alt="Content group urban running" src="/images/grid-running.png" fill className="object-cover w-full h-full" />
             </div>
           </Link>
           <Link href="/work" className="block">
-            <div className="h-[250px] rounded-[8px] overflow-hidden">
-              <Image alt="Content skincare" src="/images/grid-skincare.png" width={500} height={506} className="object-cover w-full h-full rounded-[8px]" />
+            <div className="relative w-full aspect-square overflow-hidden">
+              <Image alt="Content skincare" src="/images/grid-skincare.png" fill className="object-cover w-full h-full" />
             </div>
           </Link>
           <Link href="/work" className="block">
-            <div className="h-[250px] rounded-[8px] overflow-hidden">
-              <Image alt="Content fabric" src="/images/grid-fabric.png" width={500} height={506} className="object-cover w-full h-full rounded-[8px]" />
+            <div className="relative w-full aspect-square overflow-hidden">
+              <Image alt="Content fabric" src="/images/grid-fabric.png" fill className="object-cover w-full h-full" />
             </div>
           </Link>
         </div>
