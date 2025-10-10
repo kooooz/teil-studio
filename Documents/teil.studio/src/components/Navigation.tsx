@@ -13,7 +13,8 @@ export default function Navigation({ currentPage }: NavigationProps) {
 
   // Determine logo and text color based on current page
   // Homepage uses blue logo + white text, other pages use white logo + dark blue text
-  const isHomePage = currentPage === 'home';
+  // When mobile menu is open, always use white logo and dark blue text
+  const isHomePage = currentPage === 'home' && !mobileMenuOpen;
   const textColor = isHomePage ? '#ffffff' : '#1a2e66';
 
   return (
@@ -57,9 +58,9 @@ export default function Navigation({ currentPage }: NavigationProps) {
           className="md:hidden absolute right-0 bottom-0 w-6 h-6 flex flex-col justify-center items-center space-y-1 group"
           aria-label="Toggle menu"
         >
-          <span className={`block h-[1px] w-5 transition-all ${mobileMenuOpen ? 'rotate-45 translate-y-[5px]' : ''}`} style={{ backgroundColor: textColor }}></span>
-          <span className={`block h-[1px] w-5 transition-opacity ${mobileMenuOpen ? 'opacity-0' : ''}`} style={{ backgroundColor: textColor }}></span>
-          <span className={`block h-[1px] w-5 transition-all ${mobileMenuOpen ? '-rotate-45 -translate-y-[5px]' : ''}`} style={{ backgroundColor: textColor }}></span>
+          <span className={`block h-[1px] w-5 transition-all ${mobileMenuOpen ? 'rotate-45 translate-y-[5px]' : ''}`} style={{ backgroundColor: mobileMenuOpen ? '#1a2e66' : textColor }}></span>
+          <span className={`block h-[1px] w-5 transition-opacity ${mobileMenuOpen ? 'opacity-0' : ''}`} style={{ backgroundColor: mobileMenuOpen ? '#1a2e66' : textColor }}></span>
+          <span className={`block h-[1px] w-5 transition-all ${mobileMenuOpen ? '-rotate-45 -translate-y-[5px]' : ''}`} style={{ backgroundColor: mobileMenuOpen ? '#1a2e66' : textColor }}></span>
         </button>
       </div>
 
