@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="bg-[#f7f2e8] relative w-full min-h-screen overflow-x-hidden" data-name="Home" data-node-id="1:2">
       {/* Hero Image with crowd */}
-      <div className="relative h-[818px] w-full" data-name="Header Image" data-node-id="106:6">
+      <div className="relative h-[520px] md:h-[818px] w-full" data-name="Header Image" data-node-id="106:6">
         <Image 
           alt="Hero image" 
           src="/images/Header Image.png"
@@ -15,24 +15,23 @@ export default function Home() {
           className="object-cover"
           priority
         />
+        {/* Hero Title - Overlaid on hero image */}
+        <div className="absolute left-6 md:left-[110px] bottom-10 md:bottom-auto md:top-[558px] w-[calc(100%-3rem)] md:w-[1310px] px-0" data-node-id="35:164">
+          <h1 className="capitalize font-['Artifex_Hand_CF',_sans-serif] leading-[42px] md:leading-[75px] text-[34px] md:text-[70px] text-white">
+            Brand Strategy
+            <br />
+            Built Around People,
+            <br />
+            Not Assumptions
+          </h1>
+        </div>
       </div>
 
       {/* Navigation */}
       <Navigation currentPage="home" />
 
-      {/* Hero Title - Overlaid on hero image, left side */}
-      <div className="absolute left-6 md:left-[110px] top-[558px] w-full md:w-[1310px] px-6 md:px-0" data-node-id="35:164">
-        <h1 className="capitalize font-['Artifex_Hand_CF',_sans-serif] leading-[50px] md:leading-[75px] text-[40px] md:text-[70px] text-white">
-          Brand Strategy
-          <br />
-          Built Around People,
-          <br />
-          Not Assumptions
-        </h1>
-      </div>
-
-      {/* Subtitle - Top right of hero */}
-      <div className="absolute right-6 md:right-[110px] top-[707px] w-full md:w-[298px] px-6 md:px-0" data-node-id="35:165">
+      {/* Subtitle - desktop only (mobile layout handled in flow below) */}
+      <div className="hidden md:block absolute right-6 md:right-[110px] top-[707px] w-full md:w-[298px] px-6 md:px-0" data-node-id="35:165">
         <p className="capitalize font-['Maison_Neue_Mono',_sans-serif] leading-[20px] md:leading-[25px] text-[12px] md:text-[14px] text-white whitespace-pre-line">
           We build brands with positioning,
           {'\n'}story, and identity that connect
@@ -41,39 +40,41 @@ export default function Home() {
       </div>
 
 
-      {/* Centered brick/stone image */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 top-[1000px] w-[300px] md:w-[577px] h-[300px] md:h-[577px]" data-name="brick 1" data-node-id="106:158">
-        <Image 
-          alt="Brick center" 
-          src="/images/brick-center.png"
-          width={577}
-          height={577}
-          className="object-cover w-full h-full"
-        />
-      </div>
+      {/* Flow content for mobile; absolute positions re-applied on desktop */}
+      <div className="md:relative">
+        {/* Centered brick/stone image */}
+        <div className="mx-auto mt-8 md:mt-0 md:absolute md:left-1/2 md:transform md:-translate-x-1/2 md:top-[1000px] w-[180px] h-[180px] md:w-[577px] md:h-[577px]" data-name="brick 1" data-node-id="106:158">
+          <Image 
+            alt="Brick center" 
+            src="/images/brick-center.png"
+            width={577}
+            height={577}
+            className="object-cover w-full h-full"
+          />
+        </div>
 
+        {/* Text blocks container - centered */}
+        <div className="px-6 md:px-0 md:absolute md:left-1/2 md:transform md:-translate-x-1/2 md:top-[1746px] w-full md:w-[1015px] mt-6 md:mt-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-[15px]">
+            {/* Left text block */}
+            <div className="md:w-[500px]" data-node-id="12:14">
+              <p className="font-['Maison_Neue_Mono',_sans-serif] leading-[20px] md:leading-[25px] text-[#1a2e66] text-[12px] md:text-[14px]">
+                Staying relevant feels harder than ever. Audiences shift overnight, AI changes the rules daily, and what worked last year already feels out of date. How do you build a brand that keeps up?
+              </p>
+            </div>
 
-      {/* Text blocks container - centered */}
-      <div className="absolute left-6 md:left-1/2 md:transform md:-translate-x-1/2 top-[1746px] w-full md:w-[1015px] px-6 md:px-0">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-[15px]">
-          {/* Left text block */}
-          <div className="md:w-[500px]" data-node-id="12:14">
-            <p className="font-['Maison_Neue_Mono',_sans-serif] leading-[20px] md:leading-[25px] text-[#1a2e66] text-[12px] md:text-[14px]">
-              Staying relevant feels harder than ever. Audiences shift overnight, AI changes the rules daily, and what worked last year already feels out of date. How do you build a brand that keeps up?
-            </p>
-          </div>
-
-          {/* Right text block */}
-          <div className="md:w-[500px]" data-node-id="18:13">
-            <p className="font-['Maison_Neue_Mono',_sans-serif] leading-[20px] md:leading-[25px] text-[#1a2e66] text-[12px] md:text-[14px]">
-              Yesterday's playbooks don't work anymore. teil.studio turns audience insight, sharp positioning, and modern tools into brand systems that connect now and evolve with what's next.
-            </p>
+            {/* Right text block */}
+            <div className="md:w-[500px]" data-node-id="18:13">
+              <p className="font-['Maison_Neue_Mono',_sans-serif] leading-[20px] md:leading-[25px] text-[#1a2e66] text-[12px] md:text-[14px]">
+                Yesterday's playbooks don't work anymore. teil.studio turns audience insight, sharp positioning, and modern tools into brand systems that connect now and evolve with what's next.
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
       {/* 2x2 Image Grid - centered */}
-      <div className="absolute left-6 md:left-1/2 md:transform md:-translate-x-1/2 top-[2128px] w-full md:w-[1015px] px-6 md:px-0">
+      <div className="px-6 md:px-0 md:absolute md:left-1/2 md:transform md:-translate-x-1/2 md:top-[2128px] w-full md:w-[1015px] mt-6 md:mt-0">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-[15px]">
           {/* Top left - Breakfast */}
           <Link href="/work" className="block group">
@@ -133,8 +134,8 @@ export default function Home() {
         </div>
       </div>
 
-      {/* CTA Button - Centered, directly above bottom image */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 top-[3266px] w-[169px]" data-name="CTA Button" data-node-id="106:173">
+      {/* CTA Button - Centered */}
+      <div className="mx-auto my-8 md:my-0 md:absolute md:left-1/2 md:transform md:-translate-x-1/2 md:top-[3266px] w-[169px]" data-name="CTA Button" data-node-id="106:173">
         <Link 
           href="/contact" 
           className="bg-[#1a2e66] h-[44px] rounded-[15px] w-full hover:opacity-90 transition-opacity flex items-center justify-center" 
@@ -147,7 +148,7 @@ export default function Home() {
       </div>
 
       {/* Bottom image - directly before footer */}
-      <div className="absolute h-[400px] md:h-[816px] left-0 top-[3403px] w-full">
+      <div className="h-[300px] md:h-[816px] w-full md:absolute md:left-0 md:top-[3403px]">
         <Image 
           alt="Bottom image" 
           src="/images/bottom image.png"
@@ -156,8 +157,8 @@ export default function Home() {
         />
       </div>
 
-      {/* Footer - positioned lower to not cover the bottom image */}
-      <Footer variant="absolute" />
+      {/* Footer - flow variant for mobile-friendly stacking */}
+      <Footer variant="flow" />
     </div>
   );
 }
