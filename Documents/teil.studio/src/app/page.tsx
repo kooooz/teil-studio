@@ -25,7 +25,7 @@ export default function Home() {
         <Navigation currentPage="home" />
 
         {/* Subtitle under hero in blue */}
-        <div className="px-6 mt-4">
+        <div className="px-6 mt-6">
           <p className="capitalize font-['Maison_Neue_Mono',_sans-serif] leading-[20px] text-[12px] text-[#1a2e66] whitespace-pre-line">
             We build brands with positioning,
             {'\n'}story, and identity that connect
@@ -34,12 +34,12 @@ export default function Home() {
         </div>
 
         {/* Small centered brick */}
-        <div className="mx-auto mt-10 w-[180px] h-[180px]">
+        <div className="mx-auto mt-12 w-[180px] h-[180px]">
           <Image alt="Brick center" src="/images/brick-center.png" width={577} height={577} className="object-cover w-full h-full" />
         </div>
 
         {/* Text blocks */}
-        <div className="px-6 mt-6 space-y-6">
+        <div className="px-6 mt-12 space-y-8">
           <p className="font-['Maison_Neue_Mono',_sans-serif] leading-[20px] text-[#1a2e66] text-[12px]">
             Staying relevant feels harder than ever. Audiences shift overnight, AI changes the rules daily, and what worked last year already feels out of date. How do you build a brand that keeps up?
           </p>
@@ -49,7 +49,7 @@ export default function Home() {
         </div>
 
         {/* Image stack from grid */}
-        <div className="px-0 mt-8 space-y-0">
+        <div className="px-0 mt-10 space-y-2">
           <Link href="/work" className="block">
             <div className="relative w-full aspect-square overflow-hidden">
               <Image alt="Content breakfast" src="/images/grid-breakfast.png" fill className="object-cover w-full h-full" />
@@ -73,15 +73,15 @@ export default function Home() {
         </div>
 
         {/* CTA */}
-        <div className="mx-auto my-8 w-[169px]">
+        <div className="mx-auto my-12 w-[169px]">
           <Link href="/contact" className="bg-[#1a2e66] h-[44px] rounded-[15px] w-full hover:opacity-90 transition-opacity flex items-center justify-center">
             <span className="font-['Artifex_Hand_CF',_sans-serif] text-[20px] text-white">Let's talk</span>
           </Link>
         </div>
 
-        {/* Bottom image */}
-        <div className="relative h-[300px] w-full">
-          <Image alt="Bottom image" src="/images/bottom image.png" fill className="object-cover" />
+        {/* Bottom image - square like the others */}
+        <div className="relative w-full aspect-square overflow-hidden">
+          <Image alt="Bottom image" src="/images/bottom image.png" fill className="object-cover object-center" />
         </div>
 
         {/* Footer for mobile */}
