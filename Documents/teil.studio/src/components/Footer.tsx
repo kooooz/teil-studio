@@ -156,7 +156,7 @@ export default function Footer({ variant = 'absolute' }: { variant?: FooterVaria
               href="https://www.linkedin.com/in/koljaorzeszko"
               target="_blank"
               rel="noopener noreferrer"
-              className="block font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-white hover:opacity-80"
+              className="block font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-white hover:opacity-80 my-4"
             >
               LinkedIn
             </a>
@@ -168,7 +168,7 @@ export default function Footer({ variant = 'absolute' }: { variant?: FooterVaria
           {/* Newsletter section */}
           <div className="space-y-3">
             <p className="font-['Maison_Neue_Mono',_sans-serif] text-[8px] text-white -mt-3">Want more teil.studio</p>
-            <p className="font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-white">Get our emails. Updates.</p>
+            <p className="font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-white mt-6">Get our emails. Updates.</p>
             <form onSubmit={handleNewsletterSignup} className="flex">
               {/* Honeypot field - hidden from humans, visible to bots */}
               <input
