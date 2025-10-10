@@ -49,24 +49,24 @@ export default function Home() {
         </div>
 
         {/* Image stack from grid */}
-        <div className="px-0 mt-10 space-y-4">
+        <div className="px-6 mt-10 space-y-6">
           <Link href="/work" className="block">
-            <div className="relative w-full aspect-square overflow-hidden">
+            <div className="relative w-full aspect-square overflow-hidden rounded-[8px]">
               <Image alt="Content breakfast" src="/images/grid-breakfast.png" fill className="object-cover w-full h-full" />
             </div>
           </Link>
           <Link href="/work" className="block">
-            <div className="relative w-full aspect-square overflow-hidden">
+            <div className="relative w-full aspect-square overflow-hidden rounded-[8px]">
               <Image alt="Content group urban running" src="/images/grid-running.png" fill className="object-cover w-full h-full" />
             </div>
           </Link>
           <Link href="/work" className="block">
-            <div className="relative w-full aspect-square overflow-hidden">
+            <div className="relative w-full aspect-square overflow-hidden rounded-[8px]">
               <Image alt="Content skincare" src="/images/grid-skincare.png" fill className="object-cover w-full h-full" />
             </div>
           </Link>
           <Link href="/work" className="block">
-            <div className="relative w-full aspect-square overflow-hidden">
+            <div className="relative w-full aspect-square overflow-hidden rounded-[8px]">
               <Image alt="Content fabric" src="/images/grid-fabric.png" fill className="object-cover w-full h-full" />
             </div>
           </Link>
