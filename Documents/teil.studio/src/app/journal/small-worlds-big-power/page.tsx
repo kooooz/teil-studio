@@ -15,7 +15,7 @@ export default function SmallWorldsBigPower() {
           <div className="relative w-full h-[40vh] min-h-[240px]">
             <Image
               alt="Small Worlds, Big Power"
-              src="/images/Small Worlds, Big Power.png"
+              src="/images/small-worlds-big-power.png"
               fill
               className="object-cover object-left"
               priority
@@ -24,7 +24,7 @@ export default function SmallWorldsBigPower() {
 
           {/* Article content */}
           <div className="px-6 mt-8">
-            <p className="font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-[#1a2e66] mb-4">Oct 1, 2025</p>
+            <p className="font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-[#1a2e66] mb-4">Oct 16, 2025</p>
             <h1 className="font-['Artifex_Hand_CF',_sans-serif] text-[32px] leading-[38px] text-[#1a2e66] mb-6">
               Small Worlds, Big Power: Why Niche is Replacing the Mainstream
             </h1>
@@ -153,7 +153,7 @@ export default function SmallWorldsBigPower() {
           <div className="relative w-full h-[60vh] min-h-[360px]">
             <Image
               alt="Small Worlds, Big Power"
-              src="/images/Small Worlds, Big Power.png"
+              src="/images/small-worlds-big-power.png"
               fill
               className="object-cover object-bottom"
               priority
@@ -162,7 +162,7 @@ export default function SmallWorldsBigPower() {
 
           {/* Article content */}
           <div className="px-[110px] max-w-[980px] mx-auto mt-10">
-            <p className="font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-[#1a2e66] mb-4">Oct 1, 2025</p>
+            <p className="font-['Maison_Neue_Mono',_sans-serif] text-[12px] text-[#1a2e66] mb-4">Oct 16, 2025</p>
             <h1 className="font-['Artifex_Hand_CF',_sans-serif] text-[44px] leading-[52px] text-[#1a2e66] mb-6">
               Small Worlds, Big Power: Why Niche is Replacing the Mainstream
             </h1>
