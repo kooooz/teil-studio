@@ -17,7 +17,7 @@ export default function SmallWorldsBigPower() {
               alt="Small Worlds, Big Power"
               src="/images/small-worlds-big-power.png"
               fill
-              className="object-cover object-left"
+              className="object-cover object-top"
               priority
             />
           </div>
@@ -155,7 +155,7 @@ export default function SmallWorldsBigPower() {
               alt="Small Worlds, Big Power"
               src="/images/small-worlds-big-power.png"
               fill
-              className="object-cover object-bottom"
+              className="object-cover object-top"
               priority
             />
           </div>

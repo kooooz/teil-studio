@@ -17,7 +17,7 @@ export default function ThePartyMoved() {
               alt="The Party Moved"
               src="/images/the-party-moved.png"
               fill
-              className="object-cover object-left"
+              className="object-cover object-top"
               priority
             />
           </div>
@@ -135,7 +135,7 @@ export default function ThePartyMoved() {
               alt="The Party Moved"
               src="/images/the-party-moved.png"
               fill
-              className="object-cover object-bottom"
+              className="object-cover object-top"
               priority
             />
           </div>
