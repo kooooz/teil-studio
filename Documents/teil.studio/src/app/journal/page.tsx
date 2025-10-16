@@ -21,7 +21,7 @@ export default function Journal() {
                   src="/images/small-worlds-big-power.png"
                   width={1221}
                   height={452}
-                  className="w-full h-full object-cover object-top rounded-[8px]"
+                  className="w-full h-full object-cover object-center rounded-[8px]"
                 />
               </div>
               {/* Text below image */}
@@ -46,7 +46,7 @@ export default function Journal() {
                   src="/images/the-party-moved.png"
                   width={1221}
                   height={452}
-                  className="w-full h-full object-cover object-top rounded-[8px]"
+                  className="w-full h-full object-cover object-center rounded-[8px]"
                 />
               </div>
               {/* Text below image */}
@@ -83,7 +83,7 @@ export default function Journal() {
                   src="/images/small-worlds-big-power.png"
                   width={1221}
                   height={452}
-                  className="w-full h-full object-cover object-top rounded-[8px] transition-transform duration-300 ease-out group-hover:scale-[1.02] group-hover:opacity-95"
+                  className="w-full h-full object-cover object-center rounded-[8px] transition-transform duration-300 ease-out group-hover:scale-[1.02] group-hover:opacity-95"
                 />
                 {/* Overlay text block aligned to the right center */}
                 <div className="absolute inset-0 flex items-center justify-end pr-10">
@@ -110,7 +110,7 @@ export default function Journal() {
                   src="/images/the-party-moved.png"
                   width={1221}
                   height={452}
-                  className="w-full h-full object-cover object-top rounded-[8px] transition-transform duration-300 ease-out group-hover:scale-[1.02] group-hover:opacity-95"
+                  className="w-full h-full object-cover object-center rounded-[8px] transition-transform duration-300 ease-out group-hover:scale-[1.02] group-hover:opacity-95"
                 />
                 {/* Overlay text block aligned to the right center */}
                 <div className="absolute inset-0 flex items-center justify-end pr-10">
