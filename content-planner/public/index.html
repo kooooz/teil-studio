@@ -18,91 +18,117 @@
           <button class="filter-btn" data-filter="in-progress">In Progress</button>
           <button class="filter-btn" data-filter="finalized">Finalized</button>
         </div>
-        <button class="add-btn" id="openUpload">+ New Post</button>
+        <button class="add-btn" id="openUpload">+ New</button>
       </div>
     </div>
   </header>
 
   <!-- Feed Grid -->
   <main>
-    <div class="grid" id="feed" role="list"></div>
+    <div class="grid" id="feed"></div>
     <div class="empty-state" id="emptyState" style="display:none">
-      <p>No posts yet.<br>Click <strong>+ New Post</strong> to get started.</p>
+      <p>No posts yet. Click <strong>+ New</strong> to get started.</p>
     </div>
   </main>
 
-  <!-- Upload Modal -->
-  <div class="overlay" id="uploadOverlay">
-    <div class="modal upload-modal">
-      <button class="close-btn" id="closeUpload">✕</button>
-      <h2>New Post</h2>
+  <!-- ── Upload Screen ── -->
+  <div class="screen-overlay" id="uploadOverlay">
+    <div class="screen upload-screen">
+      <div class="screen-header">
+        <button class="screen-close" id="closeUpload">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <span class="screen-title">New Post</span>
+        <button class="screen-action" id="savePost">Post</button>
+      </div>
 
-      <div class="drop-zone" id="dropZone">
-        <input type="file" id="fileInput" accept="image/*" multiple />
-        <div class="drop-zone-inner">
-          <span class="drop-icon">↑</span>
-          <p>Drop images here or <strong>click to browse</strong></p>
-          <p class="hint">Up to 10 images · JPG, PNG, WEBP</p>
+      <div class="upload-body">
+        <!-- Left: image drop -->
+        <div class="upload-left">
+          <div class="drop-zone" id="dropZone">
+            <input type="file" id="fileInput" accept="image/*" multiple />
+            <div class="drop-inner">
+              <div class="drop-icon-wrap">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <p class="drop-label">Drop images here</p>
+              <p class="drop-hint">or click to browse · up to 10 images</p>
+            </div>
+          </div>
+          <div class="preview-strip" id="previewStrip"></div>
+        </div>
+
+        <!-- Right: details -->
+        <div class="upload-right">
+          <div class="field-group">
+            <label>Status</label>
+            <div class="status-toggle" id="uploadStatusToggle">
+              <button class="status-pill active" data-value="in-progress">In Progress</button>
+              <button class="status-pill" data-value="finalized">Finalized</button>
+            </div>
+            <input type="hidden" id="uploadStatus" value="in-progress" />
+          </div>
+
+          <div class="field-group">
+            <label>Planned Date</label>
+            <input type="date" id="uploadDate" class="field-input" />
+          </div>
+
+          <div class="field-group">
+            <label>Notes</label>
+            <textarea id="uploadComment" class="field-textarea" placeholder="Add notes for your team…" rows="6"></textarea>
+          </div>
         </div>
       </div>
-
-      <div class="preview-strip" id="previewStrip"></div>
-
-      <div class="form-group">
-        <label>Planned Date</label>
-        <input type="date" id="uploadDate" />
-      </div>
-
-      <div class="form-group">
-        <label>Comments / Notes</label>
-        <textarea id="uploadComment" rows="4" placeholder="Add notes for your team…"></textarea>
-      </div>
-
-      <div class="form-group">
-        <label>Status</label>
-        <select id="uploadStatus">
-          <option value="in-progress">In Progress</option>
-          <option value="finalized">Finalized</option>
-        </select>
-      </div>
-
-      <button class="save-btn" id="savePost">Save Post</button>
     </div>
   </div>
 
-  <!-- Detail Modal -->
-  <div class="overlay" id="detailOverlay">
-    <div class="modal detail-modal">
-      <button class="close-btn" id="closeDetail">✕</button>
-      <button class="delete-btn" id="deletePost">Delete</button>
-
-      <!-- Image gallery -->
-      <div class="gallery-main">
-        <img id="galleryMain" src="" alt="" />
-        <button class="gallery-nav prev" id="galleryPrev">‹</button>
-        <button class="gallery-nav next" id="galleryNext">›</button>
-        <span class="gallery-counter" id="galleryCounter"></span>
+  <!-- ── Detail Screen ── -->
+  <div class="screen-overlay" id="detailOverlay">
+    <div class="screen detail-screen">
+      <div class="screen-header">
+        <button class="screen-close" id="closeDetail">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <span class="screen-title"></span>
+        <button class="screen-action" id="saveDetail">Save</button>
       </div>
-      <div class="gallery-thumbs" id="galleryThumbs"></div>
 
-      <!-- Details form -->
-      <div class="detail-fields">
-        <div class="form-group">
-          <label>Planned Date</label>
-          <input type="date" id="detailDate" />
+      <div class="detail-body">
+        <!-- Left: image -->
+        <div class="detail-left">
+          <div class="gallery-wrap">
+            <img id="galleryMain" src="" alt="" />
+            <button class="gallery-nav prev" id="galleryPrev">‹</button>
+            <button class="gallery-nav next" id="galleryNext">›</button>
+            <span class="gallery-counter" id="galleryCounter"></span>
+          </div>
+          <div class="gallery-thumbs" id="galleryThumbs"></div>
         </div>
-        <div class="form-group">
-          <label>Comments / Notes</label>
-          <textarea id="detailComment" rows="4" placeholder="Add notes for your team…"></textarea>
+
+        <!-- Right: details -->
+        <div class="detail-right">
+          <div class="field-group">
+            <label>Status</label>
+            <div class="status-toggle" id="detailStatusToggle">
+              <button class="status-pill active" data-value="in-progress">In Progress</button>
+              <button class="status-pill" data-value="finalized">Finalized</button>
+            </div>
+            <input type="hidden" id="detailStatus" value="in-progress" />
+          </div>
+
+          <div class="field-group">
+            <label>Planned Date</label>
+            <input type="date" id="detailDate" class="field-input" />
+          </div>
+
+          <div class="field-group">
+            <label>Notes</label>
+            <textarea id="detailComment" class="field-textarea" placeholder="Add notes for your team…" rows="7"></textarea>
+          </div>
+
+          <button class="delete-post-btn" id="deletePost">Delete post</button>
         </div>
-        <div class="form-group status-group">
-          <label>Status</label>
-          <select id="detailStatus">
-            <option value="in-progress">In Progress</option>
-            <option value="finalized">Finalized</option>
-          </select>
-        </div>
-        <button class="save-btn" id="saveDetail">Save Changes</button>
       </div>
     </div>
   </div>
