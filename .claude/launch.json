@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "content-planner",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["content-planner/server.js"],
+      "port": 3000
+    }
+  ]
+}
